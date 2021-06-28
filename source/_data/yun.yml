@@ -1,6 +1,9 @@
 avatar:
   url: /images/myPhoto.png # 你的头像图片地址
   rounded: true
-  opacity: 1
+  opacity: 0.5
 colors:
-  primary: "#fffeee"
+  primary: "#0078e7"
+banner:
+  enable: true
+  title: 邓燕蓉的小站
