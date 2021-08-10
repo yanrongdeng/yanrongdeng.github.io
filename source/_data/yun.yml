@@ -1,9 +1,191 @@
-avatar:
+mode: auto
+
+avatar: #图像设置
   url: /images/myPhoto.png # 你的头像图片地址
-  rounded: true
-  opacity: 0.5
-colors:
-  primary: "#0078e7"
-banner:
   enable: true
-  title: 邓燕蓉的小站
+  rounded: true
+  opacity: 1
+  mickey_mouse: false 
+  status:
+    enable: true
+    emoji: 😊
+    message: 永远相信美好的事情即将发生
+
+colors: #主题色
+  primary: "#0078E7"
+  # bg: "#F5F5F5"
+  selection_bg: "#9E9DC3" # 选取文字时的背景色
+  # 标签云中标签的起始色和结束色
+  # tag_start_color:
+  # tag_end_color:
+
+tags: #标签
+  Vue: "#4fc08d"
+  Hexo: "#0E834D"
+  CSS: "#5298d1"
+  Node.js: "#026E00"
+  Git: "#F14E32"
+  React: "#61dafb"
+  Python: "#3776ab"
+  PHP: "#8892BF"
+  VS Code: "#0066B8"
+  JavaScript: "#F4DF4F"
+  TypeScript: "#317AC6"
+  Laravel: "#F4645F"
+  动画: crimson
+  漫画: orange
+  Parcel: "#21374b"
+  学习: saddlebrown
+  MAD: crimson
+  教程: royalblue
+  笔记: dimgray
+  分享: "#0078e7"
+  随笔: mediumpurple
+  Blender: "#d04d2d"
+  Linux: "#2577b1"
+  中传: "#ccb44b"
+  部落: "#DD306A"
+  科幻: midnightblue
+  AJAX: rgb(134, 194, 57)
+  
+categories: #分类
+  云游的小视频: "#FB7299"
+  笔记: dimgray
+
+# social: #社交
+
+banner: #首页
+  enable: true
+  title: 小燕子的小站
+
+reward: #打赏
+  enable: false
+  comment: 我很可爱，请给我钱11111
+
+trianglify: #随机多边形背景
+  enable: true
+
+notice: #公告
+  enable: true
+  content: 小燕子穿花衣 ^v^ 年年春天来这里~
+
+comment: #评论
+  enable: false
+  tips:
+    - 如果您有任何关于博客内容的相关讨论，欢迎前往 <a href="https://github.com/YunYouJun/yunyoujun.github.io/discussions" target="_blank">GitHub Discussions</a> 与我交流。
+
+waline:
+  enable: true
+  serverURL: https://waline.yunyoujun.cn
+  visitor: true
+  comment: true
+  avatarCDN: https://cdn.v2ex.com/gravatar/
+  placeholder: 填写邮箱，可以收到回复通知哦～
+  requiredFields: ["nick"]
+
+github_issues:
+  enable: false
+
+github_discussions:
+  enable: false
+
+disqusjs:
+  enable: false
+  shortname: yunyoujun
+  apikey: ouoGQCaamOKdJgyZU5DKcpFnRIg3SNzvk0nwygPtlcTRJuE68c8igvrZGW4wAJoN
+
+footer:
+  since: 2015
+  icon: #图标
+    url: https://sponsors.yunyoujun.cn
+    title: 云游君的赞助者们
+  powered: #驱动
+    enable: true
+  beian: #备案
+    enable: true
+    icp: 苏ICP备17038157号
+  live_time: #运行时间
+    enable: false
+    prefix: 本博客已萌萌哒地运行
+    suffix: (●'◡'●)
+    start_time: "2019-04-12T00:00:00"
+  support: # 支持
+    enable: true
+    title: 又拍云
+    link: https://www.upyun.com
+    logo: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/logo/upyun-logo.png
+    prefix: 本网站由
+    suffix: 提供 CDN 加速
+  custom_text: #自定义文本
+
+engine_search:
+  enable: false
+
+# If you want to use it, you need config algolia appID in _config.yml!!!
+# https://github.com/oncletom/hexo-algolia
+#algolia_search:
+  #enable: true
+  # ...
+
+google_analytics:
+  enable: true
+  id: G-1LL0D86CY9
+
+google_adsense:
+  enable: true
+  client: ca-pub-2245427233262012
+
+post_edit:
+  enable: true
+  url: https://github.com/YunYouJun/yunyoujun.github.io/tree/hexo/source/
+
+albums: #相册
+  enable: true
+
+girls:
+  enable: true
+
+pages: #页面链接
+  - name: 我的小伙伴们
+    url: /links/
+    icon: icon-genderless-line
+    color: dodgerblue
+  - name: 喜欢的女孩子
+    url: /girls/
+    icon: icon-women-line
+    color: hotpink
+  - name: 相册集
+    url: /albums/
+    icon: icon-gallery-line
+    color: orange
+
+menu: #导航
+  custom:
+    title: 留言板
+    path: /about/#comment
+    icon: icon-clipboard-line
+
+cursor:
+  enable: true
+
+baidu_push: true
+
+google_tagmanager:
+  enable: true
+  id: GTM-M9KWR9L
+
+#wordcount: #阅读统计
+  #enable: true
+
+say: #心灵鸡汤
+  enable: true
+  api: /data/sentences.json
+  #api: https://el-bot-api.vercel.app/api/words/young
+  hitokoto:
+    enable: false
+
+custom: #设置样式
+  style:  source/_data/style/*
+
+  #wordcloud:  #使用彩色的词云替代原生的标签云
+   # enable: true

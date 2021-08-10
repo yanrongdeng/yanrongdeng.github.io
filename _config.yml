@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 邓燕蓉的blog
+title: 小燕子的窝
 subtitle: '学习 生活'
 description: '一个爱笑&开朗的妹纸'
 keywords:
 author: yanrongdeng
-language: en
+language: zh-CN
 timezone: ''
 
 # URL
@@ -45,8 +45,8 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
-  auto_detect: false
+  line_number: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yun
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

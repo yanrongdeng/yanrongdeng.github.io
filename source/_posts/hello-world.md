@@ -36,3 +36,79 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+
+
+> Primary
+
+<div class="success">
+
+> Success
+
+</div>
+
+<div class="warning">
+
+> Warning
+
+</div>
+
+<div class="danger">
+
+> Danger
+
+</div>
+
+<div class="info">
+
+> Info
+
+</div>
+
+
+``` html
+<i class="material-icons">face</i>
+```
+
+
+<details>
+  <summary>使用方式</summary>
+
+``` html
+
+> Primary
+
+
+```
+
+<div class="success">
+
+> Success
+
+</div>
+
+<div class="warning">
+
+> Warning
+
+</div>
+
+<div class="danger">
+
+> Danger
+
+</div>
+
+<div class="info">
+
+> Info
+
+</div>
+
+</details>
+
+``` yaml
+head:
+  css:
+    material: https://fonts.googleapis.com/icon?family=Material+Icons
+```
