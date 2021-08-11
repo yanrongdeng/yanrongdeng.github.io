@@ -1,6 +1,6 @@
 ---
 title: ajax的学习笔记
-date: 2021-07-06 17:39:29
+date: 2019-07-06 17:39:29
 tags: AJAX
 categories: 学习笔记
 ---

@@ -1,10 +1,13 @@
 ---
-title: Vue的学习笔记
-date: 2021-06-25 20:08:57
+title: vue基本知识掌握
+date: 2021-04-25 20:08:57
 tags: Vue
 categories: 学习笔记
 ---
-## Vue基本指令
+## vue2.0 结构图
+![学习vue2.0](https://img-blog.csdnimg.cn/f07e6473a74248c89a80e8cfd3e7949f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
+
+## vue 基本指令
 
 `v-cloak` 能够解决插值表达式闪烁的问题
 style中设置` [v-cloak]{display：none;}`
@@ -18,7 +21,7 @@ style中设置` [v-cloak]{display：none;}`
 `@click.self ` 只有点击当前元素，才会触发事件
 `@click.prevent.once`  默认事件只触发一次 
 
-### Stop和self的区别？
+### Stop 和 self 的区别？
 * stop 阻止冒泡，也就是不触发父级的事件
 * self 只有点击自身的时候，才会触发事件
 	
@@ -38,7 +41,7 @@ style中设置` [v-cloak]{display：none;}`
 	>key属性只能使用number获取string
     >Key在使用的时候，必须用v-bind属性绑定的形式，指定key的值
   
-### v-if和v-show 的区别？
+### v-if 和 v-show 的区别？
 * 都有隐藏和显示dom元素的功能
 * v-show 类似于display:none的用法，只会预编译一次
 * v-if  不停的创建和销毁dom元素，很消耗性能
@@ -50,7 +53,7 @@ style中设置` [v-cloak]{display：none;}`
 
 `filters`  定义私有过滤器
 `directives`  定义私有指令
-## Vue的生命周期
+## vue 的生命周期
 ```js
 	//创建前后、载入前后、更新前后、销毁前后
 	beforeCreate(){},	//data 未初始化
@@ -63,7 +66,7 @@ style中设置` [v-cloak]{display：none;}`
 	destroyed(){},
 ```
 
-## Vue的异步调用请求
+## vue-resource 异步调用请求 
 引入 `vue-resource.js` 文件
 Get、post、jsonp
 ```js
@@ -75,7 +78,7 @@ Get、post、jsonp
 // 发起JSONP 请求
  this.$http.jsonp('http://www.phonegap100.com/appapi.php?a=getPortalList&catid=20&page=1').then(result => { console.log(result.body) })
 ```
-## Vue的动画transition
+## transition 动画
 ```html
 <style>
    .v-enter,.v-leave-to{
@@ -90,7 +93,7 @@ Get、post、jsonp
      <h3 v-if="flag">这是一个H3</h3>
 </transition>
 ```
-## vue组件的定义方式
+## vue 组件的定义方式
 1. extend 或是 省略extend，直接用一个对象:   `Vue.compontent("login",Vue.extend({template:"<h1>这是个h1标签</h1>"})) `
 2. template 放在HTML中，加一个id:    `Vue.component("mycom4",{template:"#com4"})`
 3. 字面量形式:   `var helloLogin = { template:"<h3>这是一个h3标签，字面量形式</h3>"}`
@@ -104,14 +107,17 @@ data  必须是  一个  函数，且返回的是  一个  对象
 在transition标签上加  `mode = " out-in "`,定义为先出后进
 
 
-## vue父--子组件的通信
+## vue组件的通信
+### props
 `props`  		父----->子
+### $emit 
 `this.$emit()`   子---->父
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20210414104020156.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
+### ref
 `ref`  获取dom元素 和  组件
 this.$refs.name
 
-## vue路由创建方式
+## vue-router 路由创建方式
 ```html
 <!-- 切换路由 -->
 <router-link to="/login?id=10&name=dyr">登录</router-link>
@@ -152,30 +158,70 @@ components:{
      main:mainBox
  }
 ```
-## watch监听属性 和 computed 计算属性
+## watch 监听属性
 ```js
   watch:{
     'firstname':function(){
        this.funllname = this.firstname + '-' + this.lastname;
     }
-  },
+  }
+```
+##  computed 计算属性
+```js
   computed:{
    'firstname':function(){
-       this.funllname = this.firstname + '-' + this.lastname;
+       return this.funllname = this.firstname + '-' + this.lastname;
     }
   }
 ```
+## nvm(node version manager) node 版本控制工具
+![nvm](https://img-blog.csdnimg.cn/c3cf82afcf734e5f95430f7c4542fd20.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
 
+## vue-devtools 调试工具
+参考链接: [vue调试工具vue-devtools安装及使用](https://www.cnblogs.com/yuqing6/p/7440549.html)
 
+1. 下载：`git clone https://github.com/vuejs/vue-devtools`
+2. 在 vue-devtools 目录下安装依赖包
+`cd vue-devtools`
+`npm install`
+3. 修改 manifest.json 文件里的 "persistent":false 改成 true
+![在这里插入图片描述](https://img-blog.csdnimg.cn/70ef62cec75a47c1b27ae57f6b89c3e5.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
+4. 编译代码： `npm run build`
+>命令行安装npm淘宝镜像：
+$ `npm install -g cnpm --registry=https://registry.npm.taobao.org`
+安装之后就可以用cnpm代替npm安装依赖包
+`cnpm install `
+`cnpm run build`
+5. 打开 chrome 的扩展程序，开发者模式，加载已经解压的扩展程序，放入 shell > chrome
+Chrome浏览器 >  更多程序 > 拓展程序 
+点击加载已解压程序按钮, 选择 vue-devtools > shells > chrome 放入, 安装成功如下图
+![在这里插入图片描述](https://img-blog.csdnimg.cn/b578449e5aad491c88641acc52c0cb93.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
+
+6. vue-devtools 使用
+vue 项目, 打开 f12 , 选择 vue 就可以使用了.
+vue 是数据驱动的, 这样就能看到对应数据了, 方便我们进行调试
+>**温情提示**: 
+>> 1.vue 必须引入开发版, 使用 min 压缩版是不能使用 devtools 进行调试的
+>> 2.安装后, 需要关闭浏览器, 再重新打开, 才能使用
+
+## ESLint 写代码的规则，使代码更优美
+## vuex 状态控制
 ## 新建vue项目
 1、全局安装vue-cli：`npm install --global vue-cli`
 2、新建项目：`vue init webpack my-project`
 3、进入项目目录：`cd my-project`
-4、运行项目：`npm run dev`
+4、安装依赖：`npm install`
+5、启动服务：`npm run dev`
 
-#### 用vue实现一个表的增删改查
+方式一：
+vue create hello-world
+cd hello-world
+npm run serve
 
-```javascript
+方式二：vue ui
+### 用vue实现一个表的增删改查
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

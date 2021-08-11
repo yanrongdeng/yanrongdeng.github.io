@@ -1,6 +1,7 @@
 ---
-title: readme
-
+title: readme 新手搭建一个博客
+date : 2021-6-25 19:40:49
+tags: Hexo
 ---
 
 本篇文章主要是为了记录一些基本的操作，我本人也会时常忘记，方便查阅。
@@ -26,7 +27,7 @@ title: readme
 > ~ 安装依赖：`npm install`
 >
 > ~ 启动服务: `hexo server`
->  缩写成 hexo s 
+>  缩写成 hexo s (More info: [Server](https://hexo.io/docs/server.html))
 >
 > ~ 服务地址: `localhost:4000`
 >
@@ -68,7 +69,7 @@ Hexo 默认提供的是 hexo-theme-landscape 主题 , 样式简单，功能较�
 > ~ 清理缓存： ` hexo clean `
 >
 > ~ 生成静态文件：`hexo generate`
-缩写为 hexo g    
+缩写为 hexo g (More info: [Generating](https://hexo.io/docs/generating.html))    
 
 7. 与远程仓库建立关联
 > ~ 初始化仓库：`git init`
@@ -86,6 +87,7 @@ deploy:
   message: Update Hexo Static Content # 你可以自定义此次部署更新的说明
 ```
 > ~ 部署Hexo：` hexo deploy`
+缩写 hexo d (More info: [Deployment](https://hexo.io/docs/one-command-deployment.html))
 > ~ 清除缓存:  `hexo clean`  
 > ~ 重新部署 Hexo: `hexo deploy -g`
 <details>
@@ -164,4 +166,47 @@ H~2~O is是液体。
 居中的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center)
 居中并且带尺寸的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center =30x30)
 
+<details>
+  <summary>使用方式</summary>
+</details>  
+
+表格
+有下滑线| ：用 &#124; 代替
+有换行 ：   用 <br/>
+
+
+yun主题 
+各“引用”的使用方法
+
+> Primary
+
+<div class="success">
+
+> Success
+
+</div>
+
+<div class="warning">
+
+> Warning
+
+</div>
+
+<div class="danger">
+
+> Danger
+
+</div>
+
+<div class="info">
+
+> Info
+
+</div>
+
+```
+``` yaml
+head:
+  css:
+    material: https://fonts.googleapis.com/icon?family=Material+Icons
 ```
