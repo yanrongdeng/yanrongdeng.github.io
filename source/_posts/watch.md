@@ -1,7 +1,7 @@
 ---
 title: js实现input/textarea监听事件
 date: 2017-10-18 16:25:21
-tags: js jQuery
+tags: propertychange
 categories: 小知识
 ---
 

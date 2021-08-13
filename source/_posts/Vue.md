@@ -20,7 +20,7 @@ style中设置` [v-cloak]{display：none;}`
 `@click.capture` 实现捕获事件处理机制
 `@click.self ` 只有点击当前元素，才会触发事件
 `@click.prevent.once`  默认事件只触发一次 
-
+`Vue.set(obj, obj.length, value);`  对数组或对象赋值
 ### Stop 和 self 的区别？
 * stop 阻止冒泡，也就是不触发父级的事件
 * self 只有点击自身的时候，才会触发事件
@@ -89,9 +89,13 @@ Get、post、jsonp
        transition: all 0.8s ease;
    }
 </style>
+<html>
+<body>
 <transition>
      <h3 v-if="flag">这是一个H3</h3>
 </transition>
+</body>
+</html>
 ```
 ## vue 组件的定义方式
 1. extend 或是 省略extend，直接用一个对象:   `Vue.compontent("login",Vue.extend({template:"<h1>这是个h1标签</h1>"})) `
