@@ -3828,7 +3828,7 @@ blockquote footer cite:before {
 }
 #article-container img {
   display: block;
-  margin: 0 auto 0.8rem;
+  margin: 0 0 0.8rem;
 }
 #article-container p {
   margin: 0 0 0.8rem;
