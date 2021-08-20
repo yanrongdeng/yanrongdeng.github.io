@@ -99,6 +99,53 @@ space-around 相邻间距相同，首和尾是中间间距的一半
 子视图属性
 alignSelf
 flex
+1、input、textarea都有maxlength属性，但是textarea不兼容ie8/9，input兼容ie8/9。
+2、同时绑定onchange、onkeydown、onkeyup，ie8/9下解决不了右键粘贴问题。
+<textarea id="area" name="ss" placeholder="请输入文本内容"></textarea>
+<p><span id="text-count">20</span>/20</p>
+<script type="text/javascript">
+    /*字数限制*/
+    $("#area").on("input propertychange", function() {
+        var $this = $(this),
+                _val = $this.val(),
+                count = "";
+        if (_val.length > 20) {
+            $this.val(_val.substring(0, 20));
+        }
+        count = 20 - $this.val().length;
+        $("#text-count").text(count);
+    });
+</script>
+3.正则表达式
+test = test.replace(/(\n\r)/g, "");  //去掉换行符
+test = test.replace(/(\t)/g, "");    //去掉空格
+test = test.replace(/<br[^>]*>(?:(rn)|r|n)?/gi, '\n'); //替换br换行符
+test = test.replace(/<\/?[^>]*>/g, "");  //去除HTML Tag
+test = test.replace(/\s*/g, "");  //去掉所有空格
+test = test.replace(/[|]*\n/, '') //去除行尾空格
+test = test.replace(/&npsp;/ig, ''); //去掉npsp
+4.姓名控制中英文输入
+var name = document.getElementById('name');
+function validate(node) {
+    var value = node.value;
+    node.value = value.replace(/[^\u4e00-\u9fa5\·]/g,'');
+}
+var compositio = false;
+//输入拼音时，停止input事件
+name.addEventListener('compositionstart', function () {
+    compositio = true;
+});
+// 非拉丁语言输入校验
+name.addEventListener('compositionend', function (event) {
+    validate(this);
+    compositio = false;
+});
+// 普通输入校验
+name.addEventListener('input', function (event) {
+    if (!compositio) {
+        validate(this);
+    }
+});
 
 1.重新打开页面 target="_blank" 。
 2.限制输入框的长度 maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"
@@ -193,3 +240,37 @@ fis3（前端工程构建工具）
                 document.getElementById( "ueditor_0" ).style.border = "1px solid #FF0000";
 		$(".page02_main").css({"padding-bottom":"200px"});
 		$(".page02_main").css("padding-bottom","200px");
+16.去标签和空格
+content.replace(/<[^>]+>/g, "").replace(/&nbsp;/ig,"").replace(/( )/g, "");
+17.在js里面，当前页面打开链接
+window.location.replace(PR.result);
+18.在WEB中拨打电话或发短信
+ 1). 拨打电话
+在电话号码前面可以加上 + （加号）表示国际号码。
+eg：
+<a href="tel:10086">10086</a>
+<a href="wtai://wp/mc;10086">10086</a>   //使用wtai协议进行拨打电话
+支持大部分的浏览器，但是在QQ浏览器上支持不好。
+2). 发送短信
+如果是需要调用短信的接口，可以将链接写成下面的格式： sms:<phone_number>[,<phone-number>]*[?body=<message_body>]。
+eg：
+<a href="sms:10086,10010?body=cxye">发送信息</a>  //给 10086 和 10010 发送内容为"cxye"的短信
+支持大部分的浏览器，但是在QQ浏览器上支持不好。
+3). Mail 发送邮件
+就和普通的html一样使用mailto。
+eg:
+<a href="mailto:test1@163.com?subject=Testing mailto&cc=test3@126.com">mail</a> //给test1@163.com发送主题为“testing”的邮件，并抄送给test3@126.com
+4). Android Market
+如果希望一个链接能够激活Android市场的功能，可以把链接写成：<a href="market://search?q=[query]">Android Market link</a>
+//其中<query>就是搜索的内容，你应用的名称
+eg：
+<a href="market://search?q=MyApp">MyApp</a>
+5). GPS地图定位
+获取定位，可以把链接写成：<a href="geopoint:[经度],[纬度]">我的位置</a>
+eg：
+<a href="geopoint:108.954823,34.275891">我的位置</a>
+
+注意：
+因微信屏蔽一键拨号功能，所以需要在要拨号的页面的URL后面增加 “#mp.weixin.qq.com”，
+如在 http://www.cnasda.com/20130817526.html 这个页面上有电话且需要拨打时，就需要在访问这个
+路径时URL应为：http://www.cnasda.com/20130817526.html#mp.weixin.qq.com

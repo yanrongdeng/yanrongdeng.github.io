@@ -7,6 +7,33 @@ categories: 学习笔记
 ## vue2.0 结构图
 ![学习vue2.0](https://img-blog.csdnimg.cn/f07e6473a74248c89a80e8cfd3e7949f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
 
+## 2.x 数据劫持
+vue 实现响应式 基于 Object.defineProperty() 的 get set  数据劫持
+defineReactive()  //提供一个闭包环境，避免环境污染
+```js
+let obj = {
+    a:1
+}
+function defineRactive(obj,key,val){
+    Object.definePorperty(obj,key,{
+        get(){
+            return val;
+        }
+        set(newVal){
+            val = newVal;
+        }
+    })
+}
+defineRactive(obj,"a",10)
+console.log(obj.a)
+
+Observe类 本质 核心功能：  正常 obj -- 属性 加工 响应式 obj
+observe(obj) 由此触发，所有的开始 ——>  判断obj身上是否有__ob__   ——>   new Observe() 
+ 
+//__ob__ 唯一的标识  存在不需要再次劫持
+// 设置 __ob__ 不能被枚举
+```
+
 ## vue 基本指令
 
 `v-cloak` 能够解决插值表达式闪烁的问题
