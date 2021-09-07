@@ -7,9 +7,29 @@ categories: 学习笔记
 
 >说明：此文档仅供自己记录学习的过程，由于webpack等版本更新，所以不兼容
 
+# webpack的基本使用
+
+## 什么是webpack？
+概念： webpack 是前端项目工程化的具体解决方案。
+
+## 什么是工程化？
+模块化：js的模块化、css的模块化、资源的模块化
+组件化：复用现有的UI结构、样式、行为
+规范化：目录结构的划分、编码规范化、接口规范化、文档规范化、Git分支管理
+自动化：自动化构建、自动部署、自动化测试
+
+## webpack的主要功能
+它提供了友好的前端模块化开发支持，以及代码压缩混淆、处理浏览器JavaScript的兼容性、性能优化等强大的功能。
+
+## webpack的好处
+让程序员把工作的重心放在具体功能的实现上，提高了前端开发效率和项目的可维护性。
 # 安装webpack
 
 1. **全局安装webpack：**  `npm install webpack webpack-cli  webpack-dev-server -g`
+2. **项目下安装webpack：**  `npm install webpack webpack-cli  webpack-dev-server --save-dev`
+
+# 配置webpack
+
 2. **新增项目目录：**  `mkdir  project`
 3. **进入project文件：**  `cd  project`
 4. **新建三个项目结构：** `mkdir dist src config`

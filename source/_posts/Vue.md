@@ -4,7 +4,17 @@ date: 2021-04-25 20:08:57
 tags: Vue
 categories: 学习笔记
 ---
-## vue2.0 结构图
+
+# vue学习
+![在这里插入图片描述](https://img-blog.csdnimg.cn/7dcb802800b9404591f2e9383f1f8fc1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_20,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/963c243fb533449e8a4f136072600c49.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_18,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/d404affbfd2847409834fc4bbeb27d12.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_20,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/f4953b8f695c4cc2b7b2f647ca70b5b1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_18,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/1aa8f7405315411198676bdf2f687a8a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_19,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/37aaf20db44c4b9fa13c76cbeadf09d9.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_20,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/2940328820e44388acb65f709a50a0d3.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_18,color_FFFFFF,t_70,g_se,x_16)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c8b44a43e89f41a4bce67a020447b721.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_18,color_FFFFFF,t_70,g_se,x_16)
+# vue2.0 结构图
 ![学习vue2.0](https://img-blog.csdnimg.cn/f07e6473a74248c89a80e8cfd3e7949f.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70)
 
 ## 2.x 数据劫持
