@@ -1,0 +1,343 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>vue实现表的增删改查 | 小燕子的窝</title><meta name="keywords" content="html"><meta name="author" content="yanrongdeng"><meta name="copyright" content="yanrongdeng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="vue实现表的增删改查                   body{margin: 0;padding: 0;}         .flex{ width: 100%;height: 100%;margin: 0 auto;}         .header{height: 100px;background-color: aqua;text-align: ce">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue实现表的增删改查">
+<meta property="og:url" content="http://example.com/2016/02/25/html/vue%E5%AE%9E%E7%8E%B0%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/index.html">
+<meta property="og:site_name" content="小燕子的窝">
+<meta property="og:description" content="vue实现表的增删改查                   body{margin: 0;padding: 0;}         .flex{ width: 100%;height: 100%;margin: 0 auto;}         .header{height: 100px;background-color: aqua;text-align: ce">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2016-02-25T12:08:57.000Z">
+<meta property="article:modified_time" content="2021-10-22T11:03:08.784Z">
+<meta property="article:author" content="yanrongdeng">
+<meta property="article:tag" content="html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2016/02/25/html/vue%E5%AE%9E%E7%8E%B0%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue实现表的增删改查',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-10-22 19:03:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小燕子的窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue实现表的增删改查</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2016-02-25T12:08:57.000Z" title="发表于 2016-02-25 20:08:57">2016-02-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-10-22T11:03:08.784Z" title="更新于 2021-10-22 19:03:08">2021-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vue实现表的增删改查"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue实现表的增删改查</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        body{margin: 0;padding: 0;}
+        .flex{ width: 100%;height: 100%;margin: 0 auto;}
+        .header{height: 100px;background-color: aqua;text-align: center;margin: 0 auto;}
+        .Lheader{padding: 30px 0;}
+        .Lheader span{color:cornflowerblue;padding-right: 5px;}
+        .Lheader input{ padding: 5px 10px;border-radius: 5px;margin-right: 40px;}
+        .content{background-color: bisque;height: 800px;padding-top: 20px;text-align: center;}
+        input[type='button']{    cursor: pointer;}
+        ul{margin: 0;}
+        ul li{border: 1px solid red;list-style: none;width: 100%;}
+        ul li:hover{
+            transition: all 0.6s ease;
+            background-color: rgb(144, 223, 247);
+        }
+        [v-cloak]{
+            display: none;
+        }
+        ul li p {display:inline-block;padding: 5px 20px;width: 200px;}
+        p input{ background-color:orange;color:white;padding: 5px 10px;border-radius: 5px; border:orange;}
+        p input:visited, p input:focus, p input:active{border:orange;outline: 0;}
+        .v-enter,.v-leave-to{
+            opacity: 0;
+            transform: translateY(80px);
+        }
+        .v-enter-active,.v-leave-active{
+            transition: all 0.6s ease;
+        }
+        .v-move{
+            transition: all 0.6s ease;
+        }
+        .v-leave-active{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex" id="app">
+        <div class="header">
+            <div class="Lheader">
+                <span>id: </span> <input type="text" oninput="value=value.replace(/[^\d]/g,'')" name="idcard" id="id" v-model="id"> 
+                <span>name: </span> <input type="text" name="name" id="name" v-model="name">
+                <input type="button" value="添加" @click="add">
+                <span>搜索：</span> 
+                <input type="search" name="search" id="search" v-model="keywords" v-focus v-color="{ color: 'green', backgroundColor: 'aqua' }"> 
+            </div>
+        </div>
+        <div class="content">
+            <transition>
+                <ul>
+                <li>
+                    <p>id</p>
+                    <p>name</p>
+                    <p>creattime</p>
+                    <p>opration</p>
+                </li>
+                </ul>
+        </transition>
+            <transition-group appear tag="ul" v-cloak>
+                <li v-for="(item,index) in oklist" :key="item.id">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p class="delete"><input type="button" value="修改" @click="update(item.id,index)"> <input type="button" value="删除" @click="deleted(index)"></p>
+                </li>
+            </transition-group>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    Number.prototype.padStart = function(...arr){
+        return  String.prototype.padStart.call(this,...arr);
+    }
+    //Vue.filter 全局自定义过滤器
+    Vue.filter("subTime",function(str,pre=''){
+        if(!str){return '';}
+        const time = new Date(str);
+        const year = time.getFullYear();
+        let month = time.getMonth() + 1;
+        let day = time.getDate();
+        let hour = time.getHours();
+        let min = time.getMinutes();
+        let sec  = time.getSeconds();
+        if(pre&&pre==='yyyy-mm-dd'){ 
+            return `${year}-${month.padStart(2,'0')}-${day.padStart(2,'0')}`;
+        }else{
+             return `${year}-${month.padStart(2,'0')}-${day.padStart(2,'0')} ${hour.padStart(2,'0')}:${min.padStart(2,'0')}:${sec.padStart(2,'0')}`;
+        }
+    })
+    //Vue.directive 全局自定义指令 `v-focus`
+    //第一个参数是指令的名称 不需要v-
+    // 第二个参数是一个对象，有一些函数，可以执行相关的操作
+    Vue.directive('focus', {
+        bind: function(el,binding,vnode){
+        },
+        // 当被绑定的元素插入到 DOM 中时……
+        inserted: function (el) {
+            el.focus()
+        },
+        update:function(el){
+            // console.log(el.value)
+        }
+    })
+    //在bind和update触发相同行为，函数简写如下
+    Vue.directive('color',function(el,binding){
+        //对象字面量的形式
+        el.style.color = binding.value.color;
+        el.style.backgroundColor = binding.value.backgroundColor;
+    })
+    let vue = new Vue({
+        el:"#app",
+        data:{
+            id:"",
+            name:"",
+            keywords:"",
+            list:[
+                {id:'1',name:"马云",creattime:'2021-3-19 15:28:26'},
+                {id:'2',name:"张三",creattime:'2021-3-19 17:28:29'},
+                {id:'3',name:"李四",creattime:'2021-3-19 13:20:35'}
+            ]
+        },
+        methods:{
+            add:function(){
+                if(this.id){
+                    this.id = this.id;
+                }else{
+                    this.id = Math.random().toString(36).substring(2,10);
+                }
+                if(!this.name){
+                    this.name = Math.random().toString(8).substring(2,6)
+                }
+                const arr = this.list.findIndex((v)=>v.id===this.id);
+                if(arr===-1){
+                    this.list.push({id:this.id ,name:this.name,creattime:new Date()});
+                    this.name = this.id = "";
+                }else{
+                    alert(`新增失败！id=${this.id}已存在`);
+                }
+                
+            },
+            deleted:function(i){
+                this.list.splice(i,1);
+            },
+           search:function(keywords){
+            //    数组的新方法   indexOf  forEach  filter  find  findIndex  
+                if(keywords){
+                    let newList = this.list.filter((item)=>item.name.includes(keywords)); //filter的用法  表达式为true   就返回当前项
+                    return newList;
+                }else{
+                    return this.list;
+                }
+           },
+           update:function(id,index){}
+        },
+        computed:{
+            oklist :function(){
+                if(this.keywords){
+                    let newList = this.list.filter((item)=>item.name.includes(this.keywords)); //filter的用法  表达式为true   就返回当前项
+                    return newList;
+                }else{
+                    return this.list;
+                }
+            }
+        },
+        //定义私有过滤器
+        filters:{
+            subTime2:function(str,pre=""){}    
+        },
+        directives:{
+             'fontweight':{
+                bind:function(el,binding){
+                    el.style.fontWeight = binding.value;
+                }
+             }
+        }
+
+    })
+</script></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">yanrongdeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2016/02/25/html/vue%E5%AE%9E%E7%8E%B0%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">http://example.com/2016/02/25/html/vue%E5%AE%9E%E7%8E%B0%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小燕子的窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/html/">html</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2016/02/25/html/Untitled-2/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">图片展示</div></div></a></div><div class="next-post pull-right"><a href="/2015/07/12/param/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">在链接URL上获取param</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2016/10/24/html/" title="学习HTML过程"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-10-24</div><div class="title">学习HTML过程</div></div></a></div><div><a href="/2016/02/25/html/1/" title="不断完善的瀑布流"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-02-25</div><div class="title">不断完善的瀑布流</div></div></a></div><div><a href="/2016/02/25/html/等高布局/" title="等高布局"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-02-25</div><div class="title">等高布局</div></div></a></div><div><a href="/2016/02/25/html/等高布局(浮动)/" title="等高布局(浮动实现)"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-02-25</div><div class="title">等高布局(浮动实现)</div></div></a></div><div><a href="/2016/02/25/html/海报预览/" title="海报预览"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-02-25</div><div class="title">海报预览</div></div></a></div><div><a href="/2016/02/25/html/精灵图片/" title="精灵图片"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2016-02-25</div><div class="title">精灵图片</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yanrongdeng</div><div class="author-info__description">一个爱笑&开朗的妹纸</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">45</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://yanrongdeng.github.io/"><i class="fab fa-github"></i><span>个人主页</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/18/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试题"/></a><div class="content"><a class="title" href="/2021/09/18/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题">面试题</a><time datetime="2021-09-18T05:10:38.000Z" title="发表于 2021-09-18 13:10:38">2021-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/es6/" title="ES6 学习记录"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 学习记录"/></a><div class="content"><a class="title" href="/2021/08/31/es6/" title="ES6 学习记录">ES6 学习记录</a><time datetime="2021-08-31T12:20:56.000Z" title="发表于 2021-08-31 20:20:56">2021-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/git/" title="git的学习笔记"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git的学习笔记"/></a><div class="content"><a class="title" href="/2021/06/25/git/" title="git的学习笔记">git的学习笔记</a><time datetime="2021-06-25T12:14:10.000Z" title="发表于 2021-06-25 20:14:10">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/25/Vue/" title="vue基本知识掌握"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue基本知识掌握"/></a><div class="content"><a class="title" href="/2021/04/25/Vue/" title="vue基本知识掌握">vue基本知识掌握</a><time datetime="2021-04-25T12:08:57.000Z" title="发表于 2021-04-25 20:08:57">2021-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/webpack4/" title="webpack4 快速入门指南"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="webpack4 快速入门指南"/></a><div class="content"><a class="title" href="/2021/03/28/webpack4/" title="webpack4 快速入门指南">webpack4 快速入门指南</a><time datetime="2021-03-28T09:20:46.000Z" title="发表于 2021-03-28 17:20:46">2021-03-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By yanrongdeng</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
