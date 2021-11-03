@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>jquery归纳总结 | 小燕子的窝</title><meta name="keywords" content="jQuery"><meta name="author" content="yanrongdeng"><meta name="copyright" content="yanrongdeng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="​1 网页中引入jquery从jquery.com 下载jquery库从页面上面引用 2 就绪函数$(document).ready(function(){    })简写:$(function(){  })  3 操作类名addClass(“类名”)         &#x2F;&#x2F;给元素增加类名removeClass(“类名”)     &#x2F;&#x2F;删除元素类名toggleClass（”类名”）  &#x2F;&#x2F;添加或删除">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jquery归纳总结">
+<meta property="og:url" content="http://example.com/2017/04/08/JS/jquery/index.html">
+<meta property="og:site_name" content="小燕子的窝">
+<meta property="og:description" content="​1 网页中引入jquery从jquery.com 下载jquery库从页面上面引用 2 就绪函数$(document).ready(function(){    })简写:$(function(){  })  3 操作类名addClass(“类名”)         &#x2F;&#x2F;给元素增加类名removeClass(“类名”)     &#x2F;&#x2F;删除元素类名toggleClass（”类名”）  &#x2F;&#x2F;添加或删除">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2017-04-08T01:33:34.000Z">
+<meta property="article:modified_time" content="2021-11-03T07:18:30.699Z">
+<meta property="article:author" content="yanrongdeng">
+<meta property="article:tag" content="jQuery">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2017/04/08/JS/jquery/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'jquery归纳总结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-03 15:18:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小燕子的窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">jquery归纳总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2017-04-08T01:33:34.000Z" title="发表于 2017-04-08 09:33:34">2017-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-03T07:18:30.699Z" title="更新于 2021-11-03 15:18:30">2021-11-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="jquery归纳总结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>​<br>1 网页中引入jquery<br>从jquery.com 下载jquery库<br>从页面上面引用 <script src='jquery.js'></script><br>2 就绪函数<br>$(document).ready(function(){    })<br>简写:$(function(){  }) </p>
+<p>3 操作类名<br>addClass(“类名”)         //给元素增加类名<br>removeClass(“类名”)     //删除元素类名<br>toggleClass（”类名”）  //添加或删除一个或多个类（切换）</p>
+<p>4 设置内容<br>html()            //无参数 读—获取元素的里的内容<br>html(“内容”)     //有参数 写—设置元素的内容<br>text( )         //文本操作<br>val()          //无参—获取值<br>val(“内容”)   //有参—设置值</p>
+<p>5 绑定事件<br>on(“click”,fn1)   //绑定事件<br>off(“click”, fn1)   //解除绑定 </p>
+<p>6 改变样式<br>css(“属性名”,”值”)  // css({“属性1” : ”值1” , ”属性2” : ”值2”})<br>font-size           //  fontSize<br>7 元素显示和隐藏<br>show()        //显示<br>hide()        //隐藏<br>toggle()      //显示/隐藏切换<br>8 元素淡入淡出<br>fadeIn()          //淡入<br>fadeout()        //淡出<br>fadeToggle()    //切换<br>9 滑动展开/卷起<br>slideUp()      //卷起<br>slideDown()    //展开<br>slideToggle()  //切换<br>10 动画<br>animate({ 属性1:值1, 属性2,值2}, 时间, 类型, 回调函数 )<br>     //属性1: [“值1”, “linear”]<br>     //属性2: [“值2”, “easeInOutExpo”]<br>11 设置/删除属性<br>attr(“属性名”)          //读–获取元素属性值;<br>attr(“属性名”,”值”)    //写–设置元素属性值;<br>removeAttr()          //移除属性<br>12 获取兄弟的方法<br>prev()          //上一个兄弟元素<br>next()          //下一个<br>siblings( )     //所有的兄弟元素<br>first()         //第一个节点<br>last()          //最后一个节点<br>eq(n)           //第n个节点<br>13 DOM对象与jquery对象相互转换<br>js对象转jq对象 增加$() document–$(document)<br>jq对象转js对象 增加[0] $(“#box”)[0]</p>
+<p>14 ajax请求<br>$.ajax({<br>    type:”GET”,   // 请求类型 GET  POST<br>    url:”data/product.json”   // 请求的url资源<br>    dataType:”json”  // 期望返回数据类型, 默认自动判断<br>    success: function( data){ }  //回调函数,处理服务器的请求内容<br>           // function(data,status,xhr){}<br>                                // data  返回的数据,<br>                                //status  描述状态字符串<br>                                // xhr – 原始的XMLHttpRequest对象<br>    error:function(xhr,status,exception){ }  // 请求失败的回调函数<br>    catch:true //默认true , 是否缓存数据;<br>})<br>简写 :<br>(1)  $.getJSON( url,dataObj,function(data) { 回调函数 })<br>(2)  $.get(url,  dataObj , callback )<br>(3)  $.post(url,  dataObj, callback ) //参数设置$.ajaxSetup({dataType:”json”})<br>(4)  load()   $(“#result”).load(url)  //将url请求的内容插入目标盒<br>15 字符串和对象的转换<br>JSON.stringify (json对象)  //转换对象为字符串<br>JSON.parse(字符串)        //字符串转成对象<br>16 find(）<br>$(“父元素”).find(“后辈元素”)   //父元素中查找后辈元素<br>17 stop()//停止当前正在运行的所有动画<br>18 remove()<br>$(“要被删除的元素”).remove()    //删除指定元素<br>19 blur()<br>on(“blur”,fn )   //失去焦点事件<br>20 empty()<br>$(“#res”).empty()   //清空元素的内容<br>21 change()//当表单控件值变化时<br>22 prop() //获取属性值<br>23 slideUp( 时间, 类型, 回调函数 )<br>动画类型: swing 平滑(默认) | linear 匀速 easeOutElastic 弹性easeInBounce 反弹</p>
+<p>24 width()//获取元素的宽高<br>25 height() //获取元素的高<br>26 each()<br>$(“元素组”).each(function(index,element){ 代码 })<br>27 stop()//立刻停止之前的所有动画<br>28 finish() //立刻完成之前的所有动画<br>29 hover()<br>hover(function(){ 鼠标移入效果 } , function(){ 鼠标移出效果 })   //鼠标移入移除函数<br>30 $.trim()<br>var newStr=$.trim(oldStr) //去除字符串两端的空格<br>31 追加<br>append(son)         //后追加<br>prepend(son)        //前追加<br>son.appendTo()      //追加到<br>before(son)         //在”我”前面追加<br>after(son)          //在”我”后面追加<br>son.insertBefore()  //追加到…前面<br>son.insertAfter()   //追加到…后面<br>32 index()<br>$(“子元素”).index() //获取一组元素中某个元素的索引值<br>33 e.preventDefault()//阻止默认事件<br>34 e.stopPropagation() //阻止事件冒泡<br>35 scrollTop<br>$(“窗口”).scrollTop( h ) //窗口向上滚动指定的距离h<br>$(document).scrollT()  //浏览器窗口滚动的距离<br>36 $(“窗口”).prop(“scrollHeight”) //获取窗口滚动内容高度<br>37 $.map()<br>var newArr=$.map(oldArr,function(val){  代码  }) //将数组中的元素逐个处理形成一个新数组<br>38 $(“按钮”).trigger(“click”) //代码模拟事件点击<br>39 parents()<br>$(“子元素”).parents(“选择器”)  //查找指定的父辈元素;<br>40 is()<br>$(“A”).is( $(“B”) )//判断两个元素是否为同一元素;<br>41 e.type //获取事件类型<br>42 scroll//窗体滚动事件<br>43 鼠标事件<br>mouseover mouout //进入或离开被选中元素或子元素; 鼠标悬停事件<br>mouseenter mouselve //进入或离开被选中元素;</p>
+<p>44 事件委托<br>给li绑定的事件,对于静态li生效<br>为了对于动态li也生效, 使用事件委托<br>把事件监听委托给li的父级ul</p>
+<p>$(“ul”).on(“click”,”li”,function(){ 代码 })<br>45 keyup<br>//键盘按键弹起事件<br>e.keyCode //获取键码</p>
+<p>46 headers: {“apikey”:”XXX”} //头文件信息设置<br>47 相对绝对定位<br>var p=$(“元素”).position()<br>p.left  p.p   //绝对坐标<br>Var q=$(“元素”).offset()<br>q.left   qop  //相对于浏览器偏移<br>48 $.isArray( ) //判断变量是否是数组<br>49 $.type() //获取对象类型<br>50 $.isEmptyObject()//判断变量是否是空对象<br>51 $.parseJSON() //将json字符串转换为js对象<br>52 $.each()<br>//遍历js对象集合<br>$.each(obj,function(prop,val){ 代码})<br>//prop 属性名<br>//val – 属性值<br>选择器<br>1 基本选择器</p>
+<p>选择器    中文名称    举例</p>
+<ul>
+<li>   所有选择器    $(“*”).<br>id    ID选择器    $(“#id”)<br>class    类选择器    $(“.class”)<br>element    元素选择器    $(“p”)<br>逗号隔开    组合选择器    $(“#id，.class”)<br>2 层级选择器</li>
+</ul>
+<p>选择器    中文名称    举例</p>
+<blockquote>
+<p>   子集选择器    $(“#box&gt;p”) #box盒内儿子辈的p</p>
+</blockquote>
+<ul>
+<li>   相邻选择器    $(“p.pc +p”) 紧邻的下一个p元素<br>~    兄弟选择器    $(“p.pc ~p”) 后面所有的兄弟p元素<br>3 位置选择器</li>
+</ul>
+<p>选择器    中文名称<br>:first    第一个元素<br>:last    最后一个元素<br>:eq(n)    第n个元素<br>:gt(n)    大于n的元素<br>:lt(n)    小于n的元素<br>:even    偶数元素（下标为0开始）<br>:odd    奇数元素（下标为0开始）<br>:header    标题元素 h1 h2…<br>li:first-child    每个ul里的第一个li<br>li:last-child    每个ul里的最后一个<br>li:nth-child(n)    每个ul中第第n个元素;<br>li:nth-child(even)    even 偶数 odd 奇数<br>li:nth-child(3n+1)    n=0 1 2<br>li:only-child    只有一个子集<br>4 内容选择器</p>
+<p>选择器    中文名称<br>:contains(“text”)    包含文本<br>:has(“选择器”)    至少包含<br>:empty    空元素<br>:parent    有文本子节点<br>5 表单对象筛选</p>
+<p>选择器    中文名称<br>:enabled    可点<br>:disabled    不可点<br>:checked    选择<br>:selected<br>6 可见性筛选</p>
+<p>选择器    中文名称<br>:visible    显示元素<br>:hidden    隐藏元素<br>7 属性选择器</p>
+<p>选择器    中文名称<br>$(“a[href]”)    包含href属性的所有a标签;<br>$(“a[href=’#’]”)    空链接;<br>$(“a[href^=’http’]”)    链接以“http”开始<br>$(“a[href$=’.html’]”)    链接以“.html”结束<br>$(“a[title*=’data’]”)    内容中包含”data”;<br>$(“a[title~=’data’]”)    内容中包含”data’”单词<br>$(‘a[href!=”#”]’)    href值不是”#’或者没有href属性或者<br>下次整理：<br>:read-only<br>:read-write<br>:before<br>:after<br>:root<br>:not 除*之外<br>:nth-last-child(n) 倒数第n行<br>:first-of-type 父元素中的某个类型的第一个<br>:last-of-type<br>:nth-of-type<br>:only-of-type 只有一个元素<br>$.data(ele,key,value)</p>
+<p>​</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">yanrongdeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2017/04/08/JS/jquery/">http://example.com/2017/04/08/JS/jquery/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小燕子的窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/jQuery/">jQuery</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2017/06/09/%E5%B7%A5%E5%85%B7/nginx/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">nginx 设置本机域名</div></div></a></div><div class="next-post pull-right"><a href="/2016/11/11/JS/javascript/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">学习JavaScript的过程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yanrongdeng</div><div class="author-info__description">一个爱笑&开朗的妹纸</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://yanrongdeng.github.io/"><i class="fab fa-github"></i><span>个人主页</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试题"/></a><div class="content"><a class="title" href="/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题">面试题</a><time datetime="2021-09-18T05:10:38.000Z" title="发表于 2021-09-18 13:10:38">2021-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/JS/es6/" title="ES6 学习记录"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 学习记录"/></a><div class="content"><a class="title" href="/2021/08/31/JS/es6/" title="ES6 学习记录">ES6 学习记录</a><time datetime="2021-08-31T12:20:56.000Z" title="发表于 2021-08-31 20:20:56">2021-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/%E5%B7%A5%E5%85%B7/git/" title="git的学习笔记"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git的学习笔记"/></a><div class="content"><a class="title" href="/2021/06/25/%E5%B7%A5%E5%85%B7/git/" title="git的学习笔记">git的学习笔记</a><time datetime="2021-06-25T12:14:10.000Z" title="发表于 2021-06-25 20:14:10">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/25/vue/Vue/" title="vue基本知识掌握"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue基本知识掌握"/></a><div class="content"><a class="title" href="/2021/04/25/vue/Vue/" title="vue基本知识掌握">vue基本知识掌握</a><time datetime="2021-04-25T12:08:57.000Z" title="发表于 2021-04-25 20:08:57">2021-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/webpack/webpack4/" title="webpack4 快速入门指南"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="webpack4 快速入门指南"/></a><div class="content"><a class="title" href="/2021/03/28/webpack/webpack4/" title="webpack4 快速入门指南">webpack4 快速入门指南</a><time datetime="2021-03-28T09:20:46.000Z" title="发表于 2021-03-28 17:20:46">2021-03-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By yanrongdeng</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

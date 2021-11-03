@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>面试题 | 小燕子的窝</title><meta name="keywords" content="面试题"><meta name="author" content="yanrongdeng"><meta name="copyright" content="yanrongdeng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="基本数据类型和引用数据类型基本数据类型：指的是简单的数据段，有6种，包括 null、undefined、string、boolean、number、symbol 引用数据类型：指的是有多个值构成的对象，包括 object、array、date、regexp、function、error、math 等。 主要区别：  声明变量时不同的内存分配：前者由于占据的空间大小固定且较小，会被存储在栈当中，也就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题">
+<meta property="og:url" content="http://example.com/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
+<meta property="og:site_name" content="小燕子的窝">
+<meta property="og:description" content="基本数据类型和引用数据类型基本数据类型：指的是简单的数据段，有6种，包括 null、undefined、string、boolean、number、symbol 引用数据类型：指的是有多个值构成的对象，包括 object、array、date、regexp、function、error、math 等。 主要区别：  声明变量时不同的内存分配：前者由于占据的空间大小固定且较小，会被存储在栈当中，也就">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-09-18T05:10:38.000Z">
+<meta property="article:modified_time" content="2021-11-03T07:15:40.740Z">
+<meta property="article:author" content="yanrongdeng">
+<meta property="article:tag" content="面试题">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '面试题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-03 15:15:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小燕子的窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">面试题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-09-18T05:10:38.000Z" title="发表于 2021-09-18 13:10:38">2021-09-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-11-03T07:15:40.740Z" title="更新于 2021-11-03 15:15:40">2021-11-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/">小知识</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="面试题"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="基本数据类型和引用数据类型"><a href="#基本数据类型和引用数据类型" class="headerlink" title="基本数据类型和引用数据类型"></a>基本数据类型和引用数据类型</h3><p><strong>基本数据类型</strong>：指的是简单的数据段，有6种，包括 null、undefined、string、boolean、number、symbol</p>
+<p><strong>引用数据类型</strong>：指的是有多个值构成的对象，包括 object、array、date、regexp、function、error、math 等。</p>
+<p>主要区别：</p>
+<ul>
+<li><strong>声明变量时不同的内存分配</strong>：前者由于占据的空间大小固定且较小，会被<strong>存储在栈当中</strong>，也就是变量访问的位置； 后者则<strong>存储在堆当中</strong>，变量访问的其实是一个指针，它指向存储对象的内存地址。</li>
+<li><strong>也正是因为内存分配不同，在复制变量时也不一样</strong>。前者复制后2个变量是独立的，因为是把值拷贝了一份；后者则是复制了一个指针，2个变量指向的值是该指针所指向的内容，一旦一方修改，另一方也会受到影响。</li>
+<li><strong>参数传递不同</strong>：虽然函数的参数都是按值传递的，但是引用值传递的值是一个内存地址，实参和形参指向的是同一个对象，所以函数内部对这个参数的修改会体现在外部。原始值只是把变量里的值传递给参数，之后参数和这个变量互不影响。<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Array</span>.isArray(b))&#123;</span><br><span class="line">        b[<span class="number">0</span>] = <span class="number">3</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(b,<span class="string">&quot;b&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">f(a);</span><br><span class="line"><span class="built_in">console</span>.log(a,<span class="string">&quot;a&quot;</span>);</span><br><span class="line"><span class="comment">//运行结果 =&gt;</span></span><br><span class="line">[<span class="number">3</span>, <span class="number">2</span>] <span class="string">&quot;b&quot;</span></span><br><span class="line">[<span class="number">3</span>, <span class="number">2</span>] <span class="string">&quot;a&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="判断数据类型的方式及区别"><a href="#判断数据类型的方式及区别" class="headerlink" title="判断数据类型的方式及区别"></a>判断数据类型的方式及区别</h3><p><strong><code>typeof</code></strong> 是一个运算符，用于检测数据的类型</p>
+<blockquote>
+<p>基本数据类型 undefined、string、number、boolean、symbol<br>  引用数据类型 object、function<br>    <strong>但是对于正则表达式、日期、数组 这些引用数据类型以及 null，它会全部识别为 object</strong></p>
+</blockquote>
+<p><strong><code>instanceof</code></strong> 同样也是一个运算符，它就能很好识别数据具体是哪一种引用类型</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">/^<span class="number">1</span>/ <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&quot;2021-07-13&quot;</span>) <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span> <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>] <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>Object.prototype.isPrototypeOf()</code></strong> 是用于测试一个对象是否存在于另一个对象的原型链上。</p>
+<blockquote>
+<p>isPrototypeOf() 与 instanceof 运算符不同。<br>在表达式 “object instanceof AFunction”中，object 的原型链是针对 AFunction.prototype 进行检查的，而不是针对 AFunction 本身。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Bar</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Baz</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">Bar.prototype = <span class="built_in">Object</span>.create(Foo.prototype);</span><br><span class="line">Baz.prototype = <span class="built_in">Object</span>.create(Bar.prototype);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> baz = <span class="keyword">new</span> Baz();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Baz.prototype.isPrototypeOf(baz)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Bar.prototype.isPrototypeOf(baz)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Foo.prototype.isPrototypeOf(baz)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.prototype.isPrototypeOf(baz)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>Object.prototype.toString.call(value)</code></strong> 利用原型和 call() 来判断类型</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">null</span>)        <span class="comment">// &quot;[object Null]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">undefined</span>)   <span class="comment">// &quot;[object Undefined]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="string">&quot;&quot;</span>)          <span class="comment">// &quot;[object String]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="number">0</span>)           <span class="comment">// &quot;[object Number]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="literal">true</span>)        <span class="comment">// &quot;[object Boolean]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(&#123;&#125;)          <span class="comment">// &quot;[object Object]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call([])          <span class="comment">// &quot;[object Array]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)<span class="comment">// &quot;[object Function]&quot;</span></span><br><span class="line"><span class="built_in">Object</span>.prototype.toString.call(<span class="built_in">isNaN</span>)       <span class="comment">// &quot;[object Function]&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>Array.isArray(value)</code></strong>  判断是否为数组</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray([])  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>Object.is(value1,value2)</code></strong>  判断特殊数据是否相等</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">-<span class="number">0</span> == +<span class="number">0</span>            <span class="comment">// true</span></span><br><span class="line"><span class="string">&quot;&quot;</span> == <span class="literal">false</span>         <span class="comment">// true</span></span><br><span class="line"><span class="literal">undefined</span> == <span class="literal">null</span>   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">undefined</span>)   <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="literal">null</span>)        <span class="comment">// 0</span></span><br><span class="line"><span class="literal">NaN</span> == <span class="literal">NaN</span>          <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>,-<span class="number">0</span>)    <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="string">&quot;&quot;</span>,<span class="literal">false</span>) <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">undefined</span>,<span class="literal">null</span>)  <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>,<span class="literal">NaN</span>)  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="描述-null、undefined、undeclared-变量的区别"><a href="#描述-null、undefined、undeclared-变量的区别" class="headerlink" title="描述 null、undefined、undeclared 变量的区别"></a>描述 null、undefined、undeclared 变量的区别</h3><p><strong>null</strong> 表示”没有对象”，即该处不应该有值，转为数值时为0。典型用法是：<br>（1） 作为函数的参数，表示该函数的参数不是对象。<br>（2） 作为对象原型链的终点。</p>
+<p><strong>undefined</strong> 表示”缺少值”，就是此处应该有一个值，但是还没有定义，转为数值时为NaN。典型用法是：<br>（1） 变量被声明了，但没有赋值时，就等于 undefined。<br>（2） 调用函数时，应该提供的参数没有提供，该参数等于 undefined。<br>（3） 对象没有赋值的属性，该属性的值为 undefined。<br>（4） 函数没有返回值时，默认返回 undefined。</p>
+<p><strong>undeclared</strong>：js 语法错误，没有申明直接使用，js 无法找到对应的上下文。</p>
+<h3 id="和-有什么区别？"><a href="#和-有什么区别？" class="headerlink" title="== 和 === 有什么区别？"></a>== 和 === 有什么区别？</h3><p>== equality 等同，=== identity 恒等。<br>==  两边值类型不同的时候，要先进行类型转换，再比较。<br>=== 不做类型转换，类型不同的一定不等。</p>
+<p>=== 下面的规则用来判断两个值是否相等：</p>
+<blockquote>
+<p>如果类型不同，就[不相等]<br>如果两个都是数值，并且是同一个值，那么[相等]；(！例外)的是，如果其中至少一个是NaN，那么[不相等]。（判断一个值是否是NaN，只能用isNaN()来判断）<br>如果两个都是字符串，每个位置的字符都一样，那么[相等]；否则[不相等]。<br>如果两个值都是true，或者都是false，那么[相等]。<br>如果两个值都引用同一个对象或函数，那么[相等]；否则[不相等]。<br>如果两个值都是null，或者都是undefined，那么[相等]。 </p>
+</blockquote>
+<p>再说 ==，根据以下规则：<br>如果两个值类型相同，进行 === 比较。<br>如果两个值类型不同，他们可能相等。根据下面规则进行类型转换再比较：</p>
+<blockquote>
+<p>如果一个是null、一个是undefined，那么[相等]。<br>如果一个是字符串，一个是数值，把字符串转换成数值再进行比较。<br>如果任一值是 true，把它转换成 1 再比较；如果任一值是 false，把它转换成 0 再比较。<br>如果一个是对象，另一个是数值或字符串，把对象转换成基础类型的值再比较。<br><strong>对象转换成基础类型，利用它的 toString 或者 valueOf 方法。</strong><br>任何其他组合，都[不相等]。</p>
+</blockquote>
+<p><strong>注意</strong>：js 核心内置类，会尝试 valueOf 先于 toString<br>    例外的是 Date，Date 利用的是 toString 转换。<br>    非 js 核心的对象，另说（比较麻烦，我也不大懂） </p>
+<h3 id="call-和-apply-的区别"><a href="#call-和-apply-的区别" class="headerlink" title="call() 和 apply() 的区别"></a>call() 和 apply() 的区别</h3><p>实际上，apply 和 call 的功能是一样的，只是传入的参数列表形式不同。<br>apply：最多只能有两个参数——新 this 对象和一个数组 argArray。<br>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lengyuehuahun/p/5643625.html">https://www.cnblogs.com/lengyuehuahun/p/5643625.html</a></p>
+<h3 id="简述-this-的指向"><a href="#简述-this-的指向" class="headerlink" title="简述 this 的指向"></a>简述 this 的指向</h3><p><strong>第一准则是</strong>：this 永远指向函数运行时所在的对象，而不是函数被创建时所在的对象。</p>
+<ul>
+<li>普通的函数调用，函数被谁调用，this 就是谁。</li>
+<li>构造函数的话，如果不用new操作符而直接调用，那即 this 指向 window。</li>
+<li>用 new 操作符生成对象实例后，this 就指向了新生成的对象。</li>
+<li>匿名函数或不处于任何对象中的函数指向 window 。</li>
+<li>如果是 call，apply 等，指定的 this 是谁，就是谁。</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/beidan/p/5371275.html">https://www.cnblogs.com/beidan/p/5371275.html</a></li>
+</ul>
+<h3 id="全局函数-eval-有什么作用？"><a href="#全局函数-eval-有什么作用？" class="headerlink" title="全局函数 eval() 有什么作用？"></a>全局函数 eval() 有什么作用？</h3><p>eval() 只有一个参数</p>
+<ul>
+<li>如果传入的参数不是字符串，它直接返回这个参数。</li>
+<li>如果参数是字符串，它会把字符串当成 javascript 代码进行编译。</li>
+<li>如果编译失败则抛出一个语法错误(syntaxError)异常。</li>
+<li>如果编译成功，则开始执行这段代码，并返回字符串中的最后一个表达式或语句的值，如果最后一个表达式或语句没有值，则最终返回 undefined。</li>
+<li>如果字符串抛出一个异常，这个异常将把该调用传递给 eval()。</li>
+</ul>
+<h3 id="同步异步"><a href="#同步异步" class="headerlink" title="同步异步?"></a>同步异步?</h3><p>1、进程同步：就是在发出一个功能调用时，在没有得到结果之前，该调用就不返回。也就是必须一件一件事做,等前一件做完了才能做下一件事</p>
+<p>2、异步的概念和同步相对。当一个异步过程调用发出后，调用者不能立刻得到结果。实际处理这个调用的部分在完成后，通过状态、通知和回调来通知调用者。</p>
+<h3 id="原生对象和宿主对象"><a href="#原生对象和宿主对象" class="headerlink" title="原生对象和宿主对象"></a>原生对象和宿主对象</h3><p><strong>原生对象</strong>：是 ECMAScript 规定的对象，所有内置对象都是原生对象，比如 Array、Date、RegExp 等。</p>
+<p><strong>宿主对象</strong>：是宿主环境，比如浏览器规定的对象，用于完善是 ECMAScript 的执行环境，比如 Document、Location、Navigator 等。</p>
+<h3 id="深拷贝和浅拷贝的区别"><a href="#深拷贝和浅拷贝的区别" class="headerlink" title="深拷贝和浅拷贝的区别"></a>深拷贝和浅拷贝的区别</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/echolun/p/7889848.html">https://www.cnblogs.com/echolun/p/7889848.html</a></p>
+<p><strong>深拷贝本身只针对较为复杂的 object 类型数据</strong> </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">0</span>,<span class="number">1</span>,[<span class="number">2</span>,<span class="number">3</span>],<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> brr = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(arr)); </span><br><span class="line"><span class="keyword">let</span> crr = $.extend(<span class="literal">true</span>,[],arr); <span class="comment">//jQuery的方法，第一个参数为 true表示深拷贝  false表示浅拷贝</span></span><br><span class="line">arr[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">arr[<span class="number">2</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(arr,brr,crr);</span><br><span class="line"><span class="comment">// 运行结果</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">1</span>, [<span class="number">1</span>, <span class="number">3</span>], <span class="number">4</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>]</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>], <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>一维数组深拷贝的方法</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> brr = [...arr];  </span><br><span class="line">    brr.push(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">let</span> crr = brr.concat(); </span><br><span class="line">    crr.push(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">let</span> drr = crr.slice(<span class="number">0</span>);  </span><br><span class="line">    drr.push(<span class="number">6</span>);</span><br><span class="line"><span class="keyword">let</span> err = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(drr)) </span><br><span class="line">    err.push(<span class="number">7</span>)</span><br><span class="line"><span class="built_in">console</span>.log(arr,brr,crr,drr,err)</span><br><span class="line"><span class="comment">// 运行结果</span></span><br><span class="line">(<span class="number">3</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] (<span class="number">4</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] (<span class="number">5</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>] (<span class="number">6</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>] (<span class="number">7</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="请尽可能详尽的解释-AJAX-的工作原理"><a href="#请尽可能详尽的解释-AJAX-的工作原理" class="headerlink" title="请尽可能详尽的解释 AJAX 的工作原理"></a>请尽可能详尽的解释 AJAX 的工作原理</h3><p>ajax 简单来说是通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 javascript 来操作 DOM 而更新页面。</p>
+<p><strong>ajax 的优点</strong></p>
+<ul>
+<li>最大的一点是页面无刷新，在页面内与服务器通信，给用户的体验非常好。</li>
+<li>使用异步方式与服务器通信，不需要打断用户的操作，具有更加迅速的响应能力。</li>
+<li>可以把以前一些服务器负担的工作转嫁到客户端，利用客户端闲置的能力来处理，减轻服务器和带宽的负担，节约空间和宽带租用成本，ajax的原则是“按需取数据”，可以最大程度的减少冗余请求。</li>
+<li>基于标准化的并被广泛支持的技术，不需要下载插件或者小程序。</li>
+</ul>
+<p><strong>ajax 的缺点</strong></p>
+<ul>
+<li>ajax对浏览器后退机制造成了破坏，也就是说用户无法通过浏览器的后退按钮回到前一次操作的页面。虽然有些浏览器解决了这个问题，比如Gmail，但它也并不能改变ajax的机制，它所带来的开发成本是非常高的，和ajax框架所要求的快速开发是相背离的。这是ajax所带来的一个非常严重的问题。</li>
+<li>安全问题。技术同时也对IT企业带来了新的安全威胁，ajax技术就如同对企业数据建立了一个直接通道。这使得开发者在不经意间会暴露比以前更多的数据和服务器逻辑。<br>对搜索引擎的支持比较弱。</li>
+<li>破坏了程序的异常机制。至少从目前看来，像ajax.dll，ajaxpro.dll这些ajax框架是会破坏程序的异常机制的。关于这个问题，我曾经在开发过程中遇到过，但是查了一下网上几乎没有相关的介绍。后来我自己做了一次试验，分别采用ajax和传统的form提交的模式来删除一条数据……给我们的调试带来了很大的困难。</li>
+<li>另外，像其他方面的一些问题，比如说违背了url和资源定位的初衷。例如，我给你一个url地址，如果采用了ajax技术，也许你在该url地址下面看到的和我在这个url地址下看到的内容是不同的。这个和资源定位的初衷是相背离的。</li>
+<li>一些手持设备（如手机、PDA等）现在还不能很好的支持ajax，比如说我们在手机的浏览器上打开采用ajax技术的网站时，它目前是不支持的，当然，这个问题和我们没太多关系。</li>
+</ul>
+<h3 id="get-和-post-有什么区别？"><a href="#get-和-post-有什么区别？" class="headerlink" title="get 和 post 有什么区别？"></a>get 和 post 有什么区别？</h3><p>其实，GET 和 POST 本质上两者没有任何区别。他们都是 HTTP 协议中的请求方法。底层实现都是基于 TCP/IP 协议。所谓区别，只是浏览器厂家根据约定，做得限制而已。</p>
+<ul>
+<li>get 是通过明文发送数据请求，而 post 是通过密文；</li>
+<li>get 传输的数据量有限，因为 url 的长度有限，post则不受限；</li>
+<li>GET 请求的参数只能是 ASCII 码，所以中文需要 URL 编码，而 POST 请求传参没有这个限制</li>
+<li>GET 产生一个 TCP 数据包；POST 产生两个 TCP 数据包。对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）；而对于 POST，浏览器先发送 header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</li>
+<li>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/logsharing/p/8448446.html">https://www.cnblogs.com/logsharing/p/8448446.html</a></li>
+</ul>
+<h3 id="请解释变量声明提升"><a href="#请解释变量声明提升" class="headerlink" title="请解释变量声明提升"></a>请解释变量声明提升</h3><p>变量提升 （词法解释）</p>
+<h4 id="变量声明："><a href="#变量声明：" class="headerlink" title="变量声明："></a>变量声明：</h4><p>javascript程序 <strong>并不全是</strong> 一行一行往下执行的</p>
+<p>1） <strong>词法解释（ 预解析 ）</strong><br>在整个文件中，查找带 var 声明的变量，通过 var 声明的变量会被提升至<strong>作用域的顶端</strong>（<code>全局作用域 | 当前函数作用域</code>）</p>
+<p>2） <strong>运行阶段</strong><br>把代码从上往下 按顺序执行， 举例如下：<br><img src="https://img-blog.csdnimg.cn/20210328102605327.png"></p>
+<h4 id="函数声明："><a href="#函数声明：" class="headerlink" title="函数声明："></a>函数声明：</h4><p>1） <strong>函数声明会提升到当前作用域的最前面</strong><br><img src="https://img-blog.csdnimg.cn/2021032810261482.png"></p>
+<p>2） <strong>函数表达式不会提升</strong><br><img src="https://img-blog.csdnimg.cn/20210328102627549.png"></p>
+<p>当同一作用域内同时出现变量和函数声明提升时，<strong>变量仍然在函数前面</strong>。</p>
+<p><strong>当碰到函数表达式，函数声明，变量声明存在同名情况时：</strong></p>
+<ul>
+<li>函数声明会被优先提升</li>
+<li>变量声明会被忽略</li>
+<li>表达式不会提升</li>
+</ul>
+<p>如果出现多个同名的函数声明，怎么提升？   <strong><code>后面的会把前面的覆盖</code></strong></p>
+<p>不带var关键字的，变量不会提升<br><img src="https://img-blog.csdnimg.cn/20210328102648357.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70"> 内存分析如下图：<br><img src="https://img-blog.csdnimg.cn/20210328102654734.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zOTA0NzE3OQ==,size_16,color_FFFFFF,t_70"><br><strong>代码执行过程如下</strong>：</p>
+<ul>
+<li>var show 提前到作用域最上面，整个函数 function show(){} 也提前，在 var show 后面 <strong>（预解析阶段）</strong></li>
+<li>然后开始执行第一个 show() ， 也就是函数 function show(){}，所以结果为 “函数声明”  <strong>（运行阶段）</strong></li>
+<li>然后执行赋值语句 show = true ， 注意此时的 function show(){} 已经被其覆盖 ， 所以 console.log(show) 的结果为 true</li>
+<li>然后执行函数表达式 show = function(){}， 会覆盖 show = true， 所以 show() 的结果为 “函数表达式” </li>
+</ul>
+<h3 id="请指出-onload-和-ready-两个事件的区别"><a href="#请指出-onload-和-ready-两个事件的区别" class="headerlink" title="请指出 onload 和 ready 两个事件的区别"></a>请指出 onload 和 ready 两个事件的区别</h3><p>页面加载完成有两种事件</p>
+<p>一是 <code>$(document).ready(function()&#123;&#125;)</code>(简写<code>$(function()&#123;&#125;)</code>)，表示文档结构DOM已经加载完成（不包含图片等非文字媒体文件）<br>二是 <code>window.onload = function()&#123;&#125;</code>，指示页面包含图片等文件在内的所有元素都加载完成。</p>
+<!-- ## 各种概念/原理 -->
+
+<h3 id="什么是事件代理-事件委托？"><a href="#什么是事件代理-事件委托？" class="headerlink" title="什么是事件代理/事件委托？"></a>什么是事件代理/事件委托？</h3><p>事件代理/事件委托是利用事件冒泡的特性，将本应该绑定在多个元素上的事件绑定在他们的祖先元素上，尤其在动态添加子元素的时候，可以非常方便的提高程序性能，减小内存空间。</p>
+<h3 id="什么是事件冒泡？什么是事件捕获？"><a href="#什么是事件冒泡？什么是事件捕获？" class="headerlink" title="什么是事件冒泡？什么是事件捕获？"></a>什么是事件冒泡？什么是事件捕获？</h3><p>冒泡型事件：事件按照从最特定的事件目标到最不特定的事件目标(document对象)的顺序触发。 <strong>从内到外(从子集到父级)</strong></p>
+<p>捕获型事件：事件从最不精确的对象(document 对象)开始触发，然后到最精确(也可以在窗口级别捕获事件，不过必须由开发人员特别指定)。 <strong>从外到内 (从父级到子集)</strong></p>
+<p>支持W3C标准的浏览器在添加事件时用 addEventListener(event,fn,useCapture) 方法，基中第3个参数 useCapture 是一个 Boolean 值，用来设置事件是在事件捕获时执行，还是事件冒泡时执行。而不兼容W3C的浏览器(IE)用 attachEvent() 方法，此方法没有相关设置，不过IE的事件模型默认是在事件冒泡时执行的，也就是在 useCapture 等于 false 的时候执行，所以把在处理事件时把 useCapture 设置为 false 是比较安全，也实现兼容浏览器的效果。</p>
+<h3 id="如何阻止冒泡？"><a href="#如何阻止冒泡？" class="headerlink" title="如何阻止冒泡？"></a>如何阻止冒泡？</h3><p>w3c 的方法是<code>e.stopPropagation()</code><br>IE 则是使用 <code>e.cancelBubble = true</code><br>例如：<br><code>window.event? window.event.cancelBubble = true : e.stopPropagation();</code><br><code>return false</code> 也可以阻止冒泡。</p>
+<h3 id="如何阻止默认事件？"><a href="#如何阻止默认事件？" class="headerlink" title="如何阻止默认事件？"></a>如何阻止默认事件？</h3><p>w3c的方法是<code>e.preventDefault()</code><br>IE则是使用<code>e.returnValue = false</code><br>比如：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">stopDefault</span>(<span class="params"> e </span>) </span>&#123; </span><br><span class="line">    <span class="comment">//阻止默认浏览器动作(W3C) </span></span><br><span class="line">    <span class="keyword">if</span> ( e &amp;&amp; e.preventDefault ) </span><br><span class="line">        e.preventDefault(); </span><br><span class="line">    <span class="comment">//IE中阻止函数器默认动作的方式 </span></span><br><span class="line">    <span class="keyword">else</span> </span><br><span class="line">        <span class="built_in">window</span>.event.returnValue = <span class="literal">false</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>return false</code>也能阻止默认行为。</p>
+<h3 id="解释下为什么接下来这段代码不是IIFE"><a href="#解释下为什么接下来这段代码不是IIFE" class="headerlink" title="解释下为什么接下来这段代码不是IIFE"></a>解释下为什么接下来这段代码不是IIFE</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<p>以function关键字开头的语句会被解析为函数声明，而函数声明是不允许直接运行的。<br>只有当解析器把这句话解析为函数表达式(<strong>立即调用的函数表达式</strong>)，才能够直接运行，怎么办呢？<br>以运算符 + - () 开头就可以了。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// code..</span></span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="如何从浏览器的URL中获取查询字符串参数？"><a href="#如何从浏览器的URL中获取查询字符串参数？" class="headerlink" title="如何从浏览器的URL中获取查询字符串参数？"></a>如何从浏览器的URL中获取查询字符串参数？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getUrlParam : <span class="function"><span class="keyword">function</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//baidu.com/product/list?keyword=XXX&amp;page=1</span></span><br><span class="line">    <span class="keyword">var</span> reg     = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">&#x27;(^|&amp;)&#x27;</span> + name + <span class="string">&#x27;=([^&amp;]*)(&amp;|$)&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> result  = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">    <span class="keyword">return</span> result ? <span class="built_in">decodeURIComponent</span>(result[<span class="number">2</span>]) : <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/42d7a08f2c994dc7b3275d5d0bd44bab.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<ul>
+<li>首先设置一个函数，给这个函数传递一个参数，也就是 url 的 search 部分的 key 值；</li>
+<li>设置一个正则表达式，以&amp;开头或没有，中间是参数，后面以#或&amp;结尾或没有；</li>
+<li>通过 <code>window.location.search.substr(1).match()</code> 匹配,返回一个数组</li>
+<li>如果数组不为空，返回数组的第3个值，也就是正则表达式的第二个子串</li>
+</ul>
+<h3 id="什么是三元表达式？“三元”表示什么意思？"><a href="#什么是三元表达式？“三元”表示什么意思？" class="headerlink" title="什么是三元表达式？“三元”表示什么意思？"></a>什么是三元表达式？“三元”表示什么意思？</h3><blockquote>
+<p>三元表达式：? :。三元–三个操作对象。</p>
+</blockquote>
+<p>在表达式boolean-exp ? value0 : value1 中，如果“布尔表达式”的结果为true，就计算“value0”，而且这个计算结果也就是操作符最终产生的值。如果“布尔表达式”的结果为false，就计算“value1”，同样，它的结果也就成为了操作符最终产生的值。</p>
+<h3 id="JavaScript-里-arguments-究竟是什么？"><a href="#JavaScript-里-arguments-究竟是什么？" class="headerlink" title="JavaScript 里 arguments 究竟是什么？"></a>JavaScript 里 arguments 究竟是什么？</h3><p>Javascrip 中国每个函数都会有一个 Arguments 对象实例 arguments，它引用着函数的实参，可以用数组下标的方式”[]”引用 arguments 的元素。</p>
+<p>arguments.length 为函数实参个数，arguments.callee 引用函数自身。</p>
+<p>在函数代码中，使用特殊对象arguments，开发者无需明确指出参数名，通过使用下标就可以访问相应的参数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">        alert(<span class="built_in">arguments</span>[i]);</span><br><span class="line">        s += <span class="built_in">arguments</span>[i] + <span class="string">&quot;,&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;age&quot;</span>);<span class="comment">//name,age</span></span><br></pre></td></tr></table></figure>
+<p>arguments 虽然有一些数组的性质，但其并非真正的数组，只是一个类数组对象。<br>其并没有数组的很多方法，不能像真正的数组那样调用.jion(),.concat(),.pop()等方法。</p>
+<h3 id="什么是”use-strict”-使用它的好处和坏处分别是什么？"><a href="#什么是”use-strict”-使用它的好处和坏处分别是什么？" class="headerlink" title="什么是”use strict”;?使用它的好处和坏处分别是什么？"></a>什么是”use strict”;?使用它的好处和坏处分别是什么？</h3><p>在代码中出现表达式-“use strict”; 意味着代码按照严格模式解析，这种模式使得 Javascript 在更严格的条件下运行。<br>好处：</p>
+<ul>
+<li>消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
+<li>提高编译器效率，增加运行速度；</li>
+<li>为未来新版本的Javascript做好铺垫。</li>
+</ul>
+<p>坏处：</p>
+<ul>
+<li>同样的代码，在”严格模式”中，可能会有不一样的运行结果；</li>
+<li>一些在”正常模式”下可以运行的语句，在”严格模式”下将不能运行。</li>
+</ul>
+<h3 id="请解释一下JavaScript的同源策略"><a href="#请解释一下JavaScript的同源策略" class="headerlink" title="请解释一下JavaScript的同源策略"></a>请解释一下JavaScript的同源策略</h3><p>同源策略，即拥有相同的协议（protocol），端口（如果指定），主机（域名）的两个页面是属于同一个源。<br>然而在IE中比较特殊，IE中没有将端口号加入同源的条件中，因此上图中端口不同那一项，在IE中是算同源的。<br><code>&lt;script&gt; &lt;img&gt; &lt;iframe&gt;</code>中的src，href都可以任意链接网络资源，是不遵循通源策略的。</p>
+<h3 id="什么是跨域？有什么方法解决跨域带来的问题？"><a href="#什么是跨域？有什么方法解决跨域带来的问题？" class="headerlink" title="什么是跨域？有什么方法解决跨域带来的问题？"></a>什么是跨域？有什么方法解决跨域带来的问题？</h3><p>跨域需要针对浏览器的同源策略来理解，同源策略指的是请求必须是同一个端口，同一个协议，同一个域名，不同源的客户端脚本在没有明确授权的情况下，不能读写对方资源。</p>
+<p>受浏览器同源策略的影响，不是同源的脚本不能操作其他源下面的对象。想要操作另一个源下的对象是就需要跨域。</p>
+<p>解决方法：jsonp</p>
+<h3 id="请解释JSONP的工作原理，以及它为什么不是真正的AJAX。"><a href="#请解释JSONP的工作原理，以及它为什么不是真正的AJAX。" class="headerlink" title="请解释JSONP的工作原理，以及它为什么不是真正的AJAX。"></a>请解释JSONP的工作原理，以及它为什么不是真正的AJAX。</h3><p>JSONP (JSON with Padding)是一个简单高效的跨域方式，HTML中的script标签可以加载并执行其他域的 javascript，于是我们可以通过script标记来动态加载其他域的资源。例如我要从域A的页面pageA加载域B的数据，那么在域B的页面pageB中我以JavaScript的形式声明pageA需要的数据，然后在 pageA中用script标签把pageB加载进来，那么pageB中的脚本就会得以执行。JSONP在此基础上加入了回调函数，pageB加载完之后会执行pageA中定义的函数，所需要的数据会以参数的形式传递给该函数。JSONP易于实现，但是也会存在一些安全隐患，如果第三方的脚本随意地执行，那么它就可以篡改页面内容，截获敏感数据。但是在受信任的双方传递数据，JSONP是非常合适的选择。</p>
+<p>AJAX是不跨域的，而JSONP是一个是跨域的，还有就是二者接收参数形式不一样！</p>
+<h3 id="通过new创建一个对象的时候，构造函数内部有哪些改变？"><a href="#通过new创建一个对象的时候，构造函数内部有哪些改变？" class="headerlink" title="通过new创建一个对象的时候，构造函数内部有哪些改变？"></a>通过new创建一个对象的时候，构造函数内部有哪些改变？</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">Person.prototype.friend = [];</span><br><span class="line">Person.prototype.name = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> Person();</span><br><span class="line">a.friend[<span class="number">0</span>] = <span class="string">&#x27;王琦&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> Person();</span><br><span class="line"><span class="built_in">console</span>.log(b.friend);<span class="comment">//Array [ &quot;王琦&quot; ]</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。</li>
+<li>属性和方法被加入到 this 引用的对象中。</li>
+<li>新创建的对象由 this 所引用，并且最后隐式的返回 this 。</li>
+</ul>
+<h3 id="什么是原型"><a href="#什么是原型" class="headerlink" title="什么是原型?"></a>什么是原型?</h3><p><img src="https://img-blog.csdnimg.cn/78e64bdbc1b74e2da3b4caf2785d195f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA54eV5a2Q6bG855qE55y85rOq,size_15,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>原型链：简单来讲就是原型组成的链，比如函数的原型是Function，Function的原型是Object，Object的原型仍然是Object，一直追溯到最终的原型对象。</p>
+<p>函数通过prototype来追溯原型对象，对象通过_proto_来追溯原型对象。</p>
+<p>通过一个构造函数创建出来的多个实例，如果都要添加一个方法，给每个实例去添加并不是一个明智的选择。这时就该用上原型了。</p>
+<p>在实例的原型上添加一个方法，这个原型的所有实例便都有了这个方法。</p>
+<p>原型链继承：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Show</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name=<span class="string">&quot;run&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Run</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.age=<span class="string">&quot;20&quot;</span>; <span class="comment">//Run继承了Show,通过原型，形成链条</span></span><br><span class="line">&#125;</span><br><span class="line">Run.prototype=<span class="keyword">new</span> Show();</span><br><span class="line"><span class="keyword">var</span> show=<span class="keyword">new</span> Run();</span><br><span class="line">alert(show.name)<span class="comment">//结果：run</span></span><br></pre></td></tr></table></figure>
+<h3 id="解释一下原型继承的原理"><a href="#解释一下原型继承的原理" class="headerlink" title="解释一下原型继承的原理"></a>解释一下原型继承的原理</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/syfwhu/p/4415586.html">https://www.cnblogs.com/syfwhu/p/4415586.html</a></p>
+<h3 id="什么是闭包？使用场景是？"><a href="#什么是闭包？使用场景是？" class="headerlink" title="什么是闭包？使用场景是？"></a>什么是闭包？使用场景是？</h3><p>闭包就是能够读取其他函数内部变量的函数，通常是函数嵌套时产生，它的最大用处有两个，一个是可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中，不会在外部函数调用后被自动清除。</p>
+<h3 id="了解过Promise吗？与回调地狱有什么关系？"><a href="#了解过Promise吗？与回调地狱有什么关系？" class="headerlink" title="了解过Promise吗？与回调地狱有什么关系？"></a>了解过Promise吗？与回调地狱有什么关系？</h3><p>参考：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544">https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544</a></p>
+<!-- ## 关于定时器的那些事儿～（偏小白逻辑） -->
+
+<h3 id="如果用户持续点击一个按钮，如何只提交一次请求，且不影响后续使用？-其实就是如何节流这个真的问的好多！！！！"><a href="#如果用户持续点击一个按钮，如何只提交一次请求，且不影响后续使用？-其实就是如何节流这个真的问的好多！！！！" class="headerlink" title="如果用户持续点击一个按钮，如何只提交一次请求，且不影响后续使用？(其实就是如何节流这个真的问的好多！！！！)"></a>如果用户持续点击一个按钮，如何只提交一次请求，且不影响后续使用？(其实就是如何节流这个真的问的好多！！！！)</h3><p><strong>何为节流</strong> 触发函数事件后，短时间间隔内无法连续调用，只有上一次函数执行后，过了规定的时间间隔，才能进行下一次的函数调用，一般用于http请求。</p>
+<p><strong>解决原理</strong> 对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">conso</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;is run&#x27;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> btnUse=<span class="literal">true</span>;</span><br><span class="line"> $(<span class="string">&quot;#btn&quot;</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(btnUse)&#123;</span><br><span class="line">         conso();</span><br><span class="line">         btnUse=<span class="literal">false</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">         btnUse=<span class="literal">true</span>;</span><br><span class="line">     &#125;,<span class="number">1500</span>) <span class="comment">//点击后相隔多长时间可执行</span></span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="如何防抖？（一般都和节流一起问，一定要搞懂！！）"><a href="#如何防抖？（一般都和节流一起问，一定要搞懂！！）" class="headerlink" title="如何防抖？（一般都和节流一起问，一定要搞懂！！）"></a>如何防抖？（一般都和节流一起问，一定要搞懂！！）</h3><p><strong>何为防抖</strong> 多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行，一般用于scroll事件。</p>
+<p><strong>解决原理</strong> 对处理函数进行延时操作，若设定的延时到来之前再次触发事件，则清除上一次的延时操作定时器，重新定时。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> timer;</span><br><span class="line"><span class="built_in">window</span>.onscroll  = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(timer)&#123;</span><br><span class="line">        <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">    &#125;</span><br><span class="line">    timer = <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//滚动条位置</span></span><br><span class="line">        <span class="keyword">let</span> scrollTop = <span class="built_in">document</span>.body.scrollTop || <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;滚动条位置：&#x27;</span> + scrollTop);</span><br><span class="line">        timer = <span class="literal">undefined</span>;</span><br><span class="line">    &#125;,<span class="number">200</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>或者是这样：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">fn, wait</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(timeout !== <span class="literal">null</span>)   <span class="built_in">clearTimeout</span>(timeout);        </span><br><span class="line">        timeout = <span class="built_in">setTimeout</span>(fn, wait);    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 处理函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params"></span>) </span>&#123;    </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">Math</span>.random()); </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 滚动事件</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;scroll&#x27;</span>, debounce(handle, <span class="number">1000</span>));</span><br></pre></td></tr></table></figure>
+
+<p>2.猜猜如下题目的结果？</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Timer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.s1 = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">this</span>.s2 = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> <span class="built_in">this</span>.s1++, <span class="number">1000</span>);</span><br><span class="line">  <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.s2++;</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> timer = <span class="keyword">new</span> Timer();</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;s1: &#x27;</span>, timer.s1), <span class="number">3100</span>);</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;s2: &#x27;</span>, timer.s2), <span class="number">3100</span>);</span><br></pre></td></tr></table></figure>
+<p>答案是：<br>s1: 3<br>s2: 0 –&gt;</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">yanrongdeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/">http://example.com/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小燕子的窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/08/31/JS/es6/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ES6 学习记录</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yanrongdeng</div><div class="author-info__description">一个爱笑&开朗的妹纸</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">24</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://yanrongdeng.github.io/"><i class="fab fa-github"></i><span>个人主页</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">基本数据类型和引用数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E5%BC%8F%E5%8F%8A%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">判断数据类型的方式及区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0-null%E3%80%81undefined%E3%80%81undeclared-%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">描述 null、undefined、undeclared 变量的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%92%8C-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">&#x3D;&#x3D; 和 &#x3D;&#x3D;&#x3D; 有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call-%E5%92%8C-apply-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">5.</span> <span class="toc-text">call() 和 apply() 的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0-this-%E7%9A%84%E6%8C%87%E5%90%91"><span class="toc-number">6.</span> <span class="toc-text">简述 this 的指向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%87%BD%E6%95%B0-eval-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-number">7.</span> <span class="toc-text">全局函数 eval() 有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5"><span class="toc-number">8.</span> <span class="toc-text">同步异步?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AE%BF%E4%B8%BB%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.</span> <span class="toc-text">原生对象和宿主对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">10.</span> <span class="toc-text">深拷贝和浅拷贝的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%B0%BD%E5%8F%AF%E8%83%BD%E8%AF%A6%E5%B0%BD%E7%9A%84%E8%A7%A3%E9%87%8A-AJAX-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">11.</span> <span class="toc-text">请尽可能详尽的解释 AJAX 的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#get-%E5%92%8C-post-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">12.</span> <span class="toc-text">get 和 post 有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E8%A7%A3%E9%87%8A%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%E6%8F%90%E5%8D%87"><span class="toc-number">13.</span> <span class="toc-text">请解释变量声明提升</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E%EF%BC%9A"><span class="toc-number">13.1.</span> <span class="toc-text">变量声明：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%EF%BC%9A"><span class="toc-number">13.2.</span> <span class="toc-text">函数声明：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%8C%87%E5%87%BA-onload-%E5%92%8C-ready-%E4%B8%A4%E4%B8%AA%E4%BA%8B%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">14.</span> <span class="toc-text">请指出 onload 和 ready 两个事件的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86-%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98%EF%BC%9F"><span class="toc-number">15.</span> <span class="toc-text">什么是事件代理&#x2F;事件委托？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1%EF%BC%9F%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7%EF%BC%9F"><span class="toc-number">16.</span> <span class="toc-text">什么是事件冒泡？什么是事件捕获？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E5%86%92%E6%B3%A1%EF%BC%9F"><span class="toc-number">17.</span> <span class="toc-text">如何阻止冒泡？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E4%BA%8B%E4%BB%B6%EF%BC%9F"><span class="toc-number">18.</span> <span class="toc-text">如何阻止默认事件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%8B%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8E%A5%E4%B8%8B%E6%9D%A5%E8%BF%99%E6%AE%B5%E4%BB%A3%E7%A0%81%E4%B8%8D%E6%98%AFIIFE"><span class="toc-number">19.</span> <span class="toc-text">解释下为什么接下来这段代码不是IIFE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84URL%E4%B8%AD%E8%8E%B7%E5%8F%96%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8F%82%E6%95%B0%EF%BC%9F"><span class="toc-number">20.</span> <span class="toc-text">如何从浏览器的URL中获取查询字符串参数？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%89%E5%85%83%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%9F%E2%80%9C%E4%B8%89%E5%85%83%E2%80%9D%E8%A1%A8%E7%A4%BA%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D%EF%BC%9F"><span class="toc-number">21.</span> <span class="toc-text">什么是三元表达式？“三元”表示什么意思？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript-%E9%87%8C-arguments-%E7%A9%B6%E7%AB%9F%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">22.</span> <span class="toc-text">JavaScript 里 arguments 究竟是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9Duse-strict%E2%80%9D-%E4%BD%BF%E7%94%A8%E5%AE%83%E7%9A%84%E5%A5%BD%E5%A4%84%E5%92%8C%E5%9D%8F%E5%A4%84%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">23.</span> <span class="toc-text">什么是”use strict”;?使用它的好处和坏处分别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8BJavaScript%E7%9A%84%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="toc-number">24.</span> <span class="toc-text">请解释一下JavaScript的同源策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%B7%A8%E5%9F%9F%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">25.</span> <span class="toc-text">什么是跨域？有什么方法解决跨域带来的问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E8%A7%A3%E9%87%8AJSONP%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%EF%BC%8C%E4%BB%A5%E5%8F%8A%E5%AE%83%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E6%98%AF%E7%9C%9F%E6%AD%A3%E7%9A%84AJAX%E3%80%82"><span class="toc-number">26.</span> <span class="toc-text">请解释JSONP的工作原理，以及它为什么不是真正的AJAX。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87new%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%97%B6%E5%80%99%EF%BC%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%86%85%E9%83%A8%E6%9C%89%E5%93%AA%E4%BA%9B%E6%94%B9%E5%8F%98%EF%BC%9F"><span class="toc-number">27.</span> <span class="toc-text">通过new创建一个对象的时候，构造函数内部有哪些改变？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8E%9F%E5%9E%8B"><span class="toc-number">28.</span> <span class="toc-text">什么是原型?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF%E7%9A%84%E5%8E%9F%E7%90%86"><span class="toc-number">29.</span> <span class="toc-text">解释一下原型继承的原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%97%AD%E5%8C%85%EF%BC%9F%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF%E6%98%AF%EF%BC%9F"><span class="toc-number">30.</span> <span class="toc-text">什么是闭包？使用场景是？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3%E8%BF%87Promise%E5%90%97%EF%BC%9F%E4%B8%8E%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB%EF%BC%9F"><span class="toc-number">31.</span> <span class="toc-text">了解过Promise吗？与回调地狱有什么关系？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E7%94%A8%E6%88%B7%E6%8C%81%E7%BB%AD%E7%82%B9%E5%87%BB%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%EF%BC%8C%E5%A6%82%E4%BD%95%E5%8F%AA%E6%8F%90%E4%BA%A4%E4%B8%80%E6%AC%A1%E8%AF%B7%E6%B1%82%EF%BC%8C%E4%B8%94%E4%B8%8D%E5%BD%B1%E5%93%8D%E5%90%8E%E7%BB%AD%E4%BD%BF%E7%94%A8%EF%BC%9F-%E5%85%B6%E5%AE%9E%E5%B0%B1%E6%98%AF%E5%A6%82%E4%BD%95%E8%8A%82%E6%B5%81%E8%BF%99%E4%B8%AA%E7%9C%9F%E7%9A%84%E9%97%AE%E7%9A%84%E5%A5%BD%E5%A4%9A%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">32.</span> <span class="toc-text">如果用户持续点击一个按钮，如何只提交一次请求，且不影响后续使用？(其实就是如何节流这个真的问的好多！！！！)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%98%B2%E6%8A%96%EF%BC%9F%EF%BC%88%E4%B8%80%E8%88%AC%E9%83%BD%E5%92%8C%E8%8A%82%E6%B5%81%E4%B8%80%E8%B5%B7%E9%97%AE%EF%BC%8C%E4%B8%80%E5%AE%9A%E8%A6%81%E6%90%9E%E6%87%82%EF%BC%81%EF%BC%81%EF%BC%89"><span class="toc-number">33.</span> <span class="toc-text">如何防抖？（一般都和节流一起问，一定要搞懂！！）</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试题"/></a><div class="content"><a class="title" href="/2021/09/18/%E9%9D%A2%E8%AF%95/%E9%9D%A2%E8%AF%95%E9%A2%98/" title="面试题">面试题</a><time datetime="2021-09-18T05:10:38.000Z" title="发表于 2021-09-18 13:10:38">2021-09-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/JS/es6/" title="ES6 学习记录"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6 学习记录"/></a><div class="content"><a class="title" href="/2021/08/31/JS/es6/" title="ES6 学习记录">ES6 学习记录</a><time datetime="2021-08-31T12:20:56.000Z" title="发表于 2021-08-31 20:20:56">2021-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/%E5%B7%A5%E5%85%B7/git/" title="git的学习笔记"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git的学习笔记"/></a><div class="content"><a class="title" href="/2021/06/25/%E5%B7%A5%E5%85%B7/git/" title="git的学习笔记">git的学习笔记</a><time datetime="2021-06-25T12:14:10.000Z" title="发表于 2021-06-25 20:14:10">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/25/vue/Vue/" title="vue基本知识掌握"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue基本知识掌握"/></a><div class="content"><a class="title" href="/2021/04/25/vue/Vue/" title="vue基本知识掌握">vue基本知识掌握</a><time datetime="2021-04-25T12:08:57.000Z" title="发表于 2021-04-25 20:08:57">2021-04-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/03/28/webpack/webpack4/" title="webpack4 快速入门指南"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="webpack4 快速入门指南"/></a><div class="content"><a class="title" href="/2021/03/28/webpack/webpack4/" title="webpack4 快速入门指南">webpack4 快速入门指南</a><time datetime="2021-03-28T09:20:46.000Z" title="发表于 2021-03-28 17:20:46">2021-03-28</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By yanrongdeng</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
