@@ -1,0 +1,254 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ajax | 小燕子的窝</title><meta name="keywords" content="AJAX"><meta name="author" content="yanrongdeng"><meta name="copyright" content="yanrongdeng"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="AJAX是什么AJAX - Asynchronous JavaScript And XML - 异步的 JavaScript 和 XML 该方法能够让Web浏览器在不刷新页面的情况下与服务器交换数据。  ajax 简单来说是通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 javascript 来操作 DOM 而更新页面。  AJAX的优缺点ajax 的优点a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax">
+<meta property="og:url" content="http://example.com/2021/02/06/JS/ajax/index.html">
+<meta property="og:site_name" content="小燕子的窝">
+<meta property="og:description" content="AJAX是什么AJAX - Asynchronous JavaScript And XML - 异步的 JavaScript 和 XML 该方法能够让Web浏览器在不刷新页面的情况下与服务器交换数据。  ajax 简单来说是通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 javascript 来操作 DOM 而更新页面。  AJAX的优缺点ajax 的优点a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-02-06T09:39:29.000Z">
+<meta property="article:modified_time" content="2022-02-12T07:31:54.103Z">
+<meta property="article:author" content="yanrongdeng">
+<meta property="article:tag" content="AJAX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/02/06/JS/ajax/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'ajax',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-02-12 15:31:54'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">小燕子的窝</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归纳</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 其他</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友人帐</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">ajax</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-06T09:39:29.000Z" title="发表于 2021-02-06 17:39:29">2021-02-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-02-12T07:31:54.103Z" title="更新于 2022-02-12 15:31:54">2022-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="ajax"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="AJAX是什么"><a href="#AJAX是什么" class="headerlink" title="AJAX是什么"></a>AJAX是什么</h1><p>AJAX - Asynchronous JavaScript And XML - 异步的 JavaScript 和 XML</p>
+<p>该方法能够让Web浏览器在不刷新页面的情况下与服务器交换数据。</p>
+<blockquote>
+<p>ajax 简单来说是通过 XmlHttpRequest 对象来向服务器发异步请求，从服务器获得数据，然后用 javascript 来操作 DOM 而更新页面。</p>
+</blockquote>
+<h1 id="AJAX的优缺点"><a href="#AJAX的优缺点" class="headerlink" title="AJAX的优缺点"></a>AJAX的优缺点</h1><p><strong>ajax 的优点</strong><br>a、不需要插件支持(广泛应用)<br>b、优秀的用户体验(无刷新通信)<br>c、提高Web程序的性能(异步通信)<br>d、减轻服务器和带宽的负担(节约空间和宽带成本)</p>
+<p><strong>ajax 的缺点</strong><br>a、浏览器对XMLHttpRequest对象的支持度不足，几乎所有浏览器现在都支持<br>b、破坏浏览器“前进”、“后退”按钮的正常功能，可以通过简单的插件弥补<br>c、对搜索引擎的支持不足<br>d、安全问题</p>
+<h1 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h1><p><code>XMLHttpRequest()</code>用于和服务器交换数据。</p>
+<p>发送一个HTTP请求时，需要创建一个 XMLHttpRequest 对象，打开一个URL，发送请求，服务器会返回 HTTP 状态码及响应主体。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlHttp = <span class="keyword">new</span> XMLHTTPRequest();</span><br></pre></td></tr></table></figure>
+<p>值得一提的是，IE6 及以前版本的IE用的都是<code>ActiveXObject</code>。2021年了，还有人用 IE6 吗？</p>
+<h1 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h1><p>使用 <code>XMLHttpRequest</code> 对象的 <code>open()</code> 和 <code>send()</code> 方法。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;https://kawashiro_ryofu.gitee.io/blogimagerc/index.html&quot;</span>,<span class="literal">true</span>)</span><br><span class="line">xmlHttp.send();</span><br></pre></td></tr></table></figure>
+<h2 id="open-方法"><a href="#open-方法" class="headerlink" title="open()方法"></a>open()方法</h2><p>语法：<code>xmlHttp.open(method, url, async, user, passwd);</code></p>
+<p>~ <code>xmlHttp</code>: 创建的 XMLHttpRequest 对象<br>~ <code>method</code>: 要使用的HTTP方法。常用的是 GET 和 POST<br>~ <code>url</code>: 要向其发送请求的URL<br>~ <code>async</code>: 可选参数。布尔类型。表示是否异步操作，默认为 true。如果为 false，<code>send()</code> 方法直到收到答复前不会返回<br>~ <code>user</code>: 可选参数。用于认证用途，用户名<br>~ <code>passwd</code>: 可选参数。用于认证用途，密码</p>
+<h2 id="send-方法"><a href="#send-方法" class="headerlink" title="send()方法"></a>send()方法</h2><p>语法：<code>xmlHttp.send(body);</code></p>
+<p>~ <code>body</code>: 可选参数。在 <code>XMLHttpRequest</code> 请求中要发送的数据体，默认为 null 。仅用于 POST 请求</p>
+<h2 id="GET还是POST"><a href="#GET还是POST" class="headerlink" title="GET还是POST"></a>GET还是POST</h2><p>一言蔽之，<code>GET</code> <strong>适用于大多数请求（<code>与 POST 相比，GET 更简单也更快</code>）</strong>。</p>
+<ul>
+<li>GET 是通过明文发送数据请求，而 POST 是通过密文</li>
+<li>GET 传输的数据量有限，因为 URL 的长度有限，POST 则不受限</li>
+<li>GET 请求的参数只能是 ASCII 码，所以中文需要 URL 编码，而 POST 请求传参没有这个限制</li>
+<li>GET 产生一个 TCP 数据包，POST 产生两个 TCP 数据包。<blockquote>
+<p>对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）<br>对于 POST，浏览器先发送 header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+</blockquote>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/logsharing/p/8448446.html">参考链接</a></li>
+</ul>
+<p>在以下情况中，请使用 POST 请求：</p>
+<blockquote>
+<ul>
+<li>无法使用缓存文件（更新服务器上的文件或数据库）</li>
+<li>向服务器发送大量数据（POST没有数量限制）</li>
+<li>发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠</li>
+</ul>
+</blockquote>
+<h3 id="GET"><a href="#GET" class="headerlink" title="GET"></a>GET</h3><blockquote>
+<p>用于获取信息，request.QueryString 通过地址栏来传值，对发送消息的数量有限制，2000字符</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;https://kawashiro_ryofu.gitee.io/blogimagerc/index.html&quot;</span>,<span class="literal">true</span>);</span><br><span class="line">xmlHttp.send();</span><br></pre></td></tr></table></figure>
+
+<p>执行上面的例子，浏览器可能返回缓存的数据。</p>
+<p>简单粗暴的解决方案：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;https://kawashiro_ryofu.gitee.io/blogimagerc/index.html?t=&quot;</span> + <span class="built_in">Math</span>.random(),<span class="literal">true</span>);</span><br><span class="line">xmlHttp.send();</span><br></pre></td></tr></table></figure>
+<p>只需要向URL中添加一个无用的随机参数就可以了。</p>
+<h3 id="POST"><a href="#POST" class="headerlink" title="POST"></a>POST</h3><blockquote>
+<p>用于修改服务器的资源，request.Form通过提交表单来传值，数量无限制</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;POST&quot;</span>,<span class="string">&quot;https://www.runoob.com/try/ajax/demo_post2.php&quot;</span> + <span class="built_in">Math</span>.random(),<span class="literal">true</span>);</span><br><span class="line">xmlHttp.setRequestHeader(<span class="string">&quot;Content-type&quot;</span>,<span class="string">&quot;application/x-www-form-urlencoded&quot;</span>); <span class="comment">//向请求添加HTTP头</span></span><br><span class="line">xmlHttp.send(<span class="string">&quot;fname=河城&amp;lname=荷取&quot;</span>) <span class="comment">//参数</span></span><br></pre></td></tr></table></figure>
+<h1 id="头部信息"><a href="#头部信息" class="headerlink" title="头部信息"></a>头部信息</h1><h2 id="设置header"><a href="#设置header" class="headerlink" title="设置header"></a>设置header</h2><p>语法：<code>xmlHttp.setRequestHeader(key,value);</code></p>
+<p>~ <code>key</code>: 规定HTTP头的名称<br>~ <code>value</code>: 规定头的值</p>
+<h2 id="获取header"><a href="#获取header" class="headerlink" title="获取header"></a>获取header</h2><p>语法：<code>xmlhttp.getAllResponseHeaders();</code> 检索资源（文件）的头信息。</p>
+<p>语法：<code>xmlHttp.getResponseHeader(key)</code> 检索资源（文件）的指定头信息。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlhttp.getResponseHeader(<span class="string">&#x27;Last-Modified&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h1 id="异步还是同步"><a href="#异步还是同步" class="headerlink" title="异步还是同步"></a>异步还是同步</h1><p>多数情况下，<code>async</code>应设置为<code>true</code>，表示异步。但有时 async=false 更合适。</p>
+<p>对于 web 开发人员来说，发送异步请求是一个巨大的进步。很多在服务器执行的任务都相当费时。AJAX 出现之前，这可能会引起应用程序挂起或停止。</p>
+<p>通过 AJAX，JavaScript 无需等待服务器的响应，而是：</p>
+<ul>
+<li>在等待服务器响应时执行其他脚本</li>
+<li>当响应就绪后对响应进行处理</li>
+</ul>
+<h2 id="Async-true"><a href="#Async-true" class="headerlink" title="Async = true"></a>Async = true</h2><p>当使用 <code>async=true</code> 时，请规定在响应处于 onreadystatechange 事件中的就绪状态时执行的函数：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState==<span class="number">4</span> &amp;&amp; xmlHttp.status==<span class="number">200</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;myDiv&quot;</span>).innerHTML = xmlHttp.getAllResponseHeaders();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;/try/ajax/ajax_info.txt&quot;</span>,<span class="literal">true</span>);</span><br><span class="line">xmlHttp.send();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Async-false"><a href="#Async-false" class="headerlink" title="Async = false"></a>Async = false</h2><p>如需使用 <code>async=false</code>，请将 open() 方法中的第三个参数改为 false：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;test1.txt&quot;</span>,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>非必要情况，不推荐使用 async=false（同步），JavaScript 会等到服务器响应就绪才继续执行。如果服务器繁忙或缓慢，应用程序会挂起或停止。</p>
+<p><strong>注意：</strong> 使用 async=false 时，不要编写 onreadystatechange 函数， 把代码放到 send() 语句后面即可：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.open(<span class="string">&quot;GET&quot;</span>,<span class="string">&quot;/try/ajax/ajax_info.txt&quot;</span>,<span class="literal">false</span>);</span><br><span class="line">xmlHttp.send();</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;myDiv&quot;</span>).innerHTML=xmlHttp.responseText;</span><br></pre></td></tr></table></figure>
+
+<h1 id="服务器响应"><a href="#服务器响应" class="headerlink" title="服务器响应"></a>服务器响应</h1><p>接收服务器响应数据，应使用 <code>responseText</code> 或 <code>responseXML</code> 属性。二者的区别在于，前者默认获得文本（字符串）数据，后者会解析 XML。</p>
+<h2 id="responseText"><a href="#responseText" class="headerlink" title="responseText"></a>responseText</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(xmlHttp.responseText)</span><br></pre></td></tr></table></figure>
+
+<h2 id="responseXML"><a href="#responseXML" class="headerlink" title="responseXML"></a>responseXML</h2><p><del>什么时候推出一个“responseJson”啊</del></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlDoc=xmlHttp.responseXML;</span><br><span class="line">txt=<span class="string">&quot;&quot;</span>;</span><br><span class="line">x=xmlDoc.getElementsByTagName(<span class="string">&quot;ARTIST&quot;</span>);</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;x.length;i++)</span><br><span class="line">&#123;</span><br><span class="line">    txt=txt + x[i].childNodes[<span class="number">0</span>].nodeValue + <span class="string">&quot;&lt;br&gt;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&quot;myDiv&quot;</span>).innerHTML=txt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="onreadystatechange事件"><a href="#onreadystatechange事件" class="headerlink" title="onreadystatechange事件"></a>onreadystatechange事件</h1><p>当请求被发送到服务器时，我们需要执行一些基于响应的任务。</p>
+<p>下面是 XMLHttpRequest 对象的三个重要的属性：</p>
+<p><code>onreadystatechange</code>    存储函数（或函数名），每当 readyState 属性改变时，就会调用该函数。<br><code>readyState</code>    存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</p>
+<blockquote>
+<p>  0 : 请求未初始化<br>    1 : 服务器连接已建立<br>    2 : 请求已接收<br>    3 : 请求处理中<br>    4 : 请求已完成，且响应已就绪</p>
+</blockquote>
+<p><code>status</code>    200 : “OK”  &nbsp;&nbsp;  404 : 未找到页面</p>
+<p>在 onreadystatechange 事件中，我们规定当服务器响应已做好被处理的准备时所执行的任务。</p>
+<p>当 readyState 等于 4 且状态为 200 时，表示响应已就绪：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xmlHttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlHttp.readyState==<span class="number">4</span> &amp;&amp; xmlHttp.status==<span class="number">200</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">&quot;myDiv&quot;</span>).innerHTML= xmlHttp.responseText;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong> onreadystatechange 事件被触发 4 次（0 - 4）, 分别是： 0-1、1-2、2-3、3-4，对应着 readyState 的每个变化。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.runoob.com/ajax/ajax-intro.html">AJAX 教程 | 菜鸟教程 - RUNOOB.COM</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX">Ajax - Web 开发者指南 | MDN</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.kawashiros.club/p/2020/46134e8e">笔记·AJAX</a></p>
+</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">yanrongdeng</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2021/02/06/JS/ajax/">http://example.com/2021/02/06/JS/ajax/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">小燕子的窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/AJAX/">AJAX</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/02/09/webpack/node-env/"><img class="prev-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">process.env.NODE_ENV详解</div></div></a></div><div class="next-post pull-right"><a href="/2021/01/12/JS/array/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Array</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">yanrongdeng</div><div class="author-info__description">一个爱笑&开朗的妹纸</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">34</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://yanrongdeng.github.io/"><i class="fab fa-github"></i><span>个人主页</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">AJAX是什么</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AJAX%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">AJAX的优缺点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XMLHttpRequest"><span class="toc-number">3.</span> <span class="toc-text">XMLHttpRequest</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="toc-number">4.</span> <span class="toc-text">发送请求</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#open-%E6%96%B9%E6%B3%95"><span class="toc-number">4.1.</span> <span class="toc-text">open()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#send-%E6%96%B9%E6%B3%95"><span class="toc-number">4.2.</span> <span class="toc-text">send()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E8%BF%98%E6%98%AFPOST"><span class="toc-number">4.3.</span> <span class="toc-text">GET还是POST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GET"><span class="toc-number">4.3.1.</span> <span class="toc-text">GET</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#POST"><span class="toc-number">4.3.2.</span> <span class="toc-text">POST</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%B4%E9%83%A8%E4%BF%A1%E6%81%AF"><span class="toc-number">5.</span> <span class="toc-text">头部信息</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEheader"><span class="toc-number">5.1.</span> <span class="toc-text">设置header</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96header"><span class="toc-number">5.2.</span> <span class="toc-text">获取header</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E8%BF%98%E6%98%AF%E5%90%8C%E6%AD%A5"><span class="toc-number">6.</span> <span class="toc-text">异步还是同步</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Async-true"><span class="toc-number">6.1.</span> <span class="toc-text">Async &#x3D; true</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Async-false"><span class="toc-number">6.2.</span> <span class="toc-text">Async &#x3D; false</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%93%8D%E5%BA%94"><span class="toc-number">7.</span> <span class="toc-text">服务器响应</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#responseText"><span class="toc-number">7.1.</span> <span class="toc-text">responseText</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#responseXML"><span class="toc-number">7.2.</span> <span class="toc-text">responseXML</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#onreadystatechange%E4%BA%8B%E4%BB%B6"><span class="toc-number">8.</span> <span class="toc-text">onreadystatechange事件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">9.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/11/JS/javascript/" title="JavaScript"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="JavaScript"/></a><div class="content"><a class="title" href="/2021/11/11/JS/javascript/" title="JavaScript">JavaScript</a><time datetime="2021-11-11T01:49:41.000Z" title="发表于 2021-11-11 09:49:41">2021-11-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/08/31/JS/es6/" title="ES6"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="ES6"/></a><div class="content"><a class="title" href="/2021/08/31/JS/es6/" title="ES6">ES6</a><time datetime="2021-08-31T12:20:56.000Z" title="发表于 2021-08-31 20:20:56">2021-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/25/tools/git/" title="git"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git"/></a><div class="content"><a class="title" href="/2021/06/25/tools/git/" title="git">git</a><time datetime="2021-06-25T12:14:10.000Z" title="发表于 2021-06-25 20:14:10">2021-06-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/06/11/JS/Time/" title="Time格式"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Time格式"/></a><div class="content"><a class="title" href="/2021/06/11/JS/Time/" title="Time格式">Time格式</a><time datetime="2021-06-11T10:18:16.000Z" title="发表于 2021-06-11 18:18:16">2021-06-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/04/25/Vue/" title="vue"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue"/></a><div class="content"><a class="title" href="/2021/04/25/Vue/" title="vue">vue</a><time datetime="2021-04-25T12:08:57.000Z" title="发表于 2021-04-25 20:08:57">2021-04-25</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By yanrongdeng</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
